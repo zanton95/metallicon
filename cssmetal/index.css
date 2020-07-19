@@ -1,41 +1,35 @@
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  padding: 29px  31px;
+  width: 100%;
+  float: left;
+  height: ;
+ }
+  .topnav a {
+  color: aliceblue;
+  font-size: 17px;
+  padding-right: 30px;
+}
+.songs-table {
+  margin: 0 auto;
+  text-align: left;
+  border-spacing: 0;
+  border-collapse: collapse;
   
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+}
+
+.songs-table td {
+  border-style: solid;
+}
+
+.nem-title, .nem-song, .enter-title, .enter-song, .unforgiven-title, .unforgiven-song {
+  text-align: center;
+}
   
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
   
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .lyrics, .main-title {
-      font-style: oblique;
-  }
-  .dropdown-content a:hover {background-color: #ddd}
-  .show {display:block;}
-
-
-  /* .dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;} */
+ 
