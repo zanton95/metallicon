@@ -27,9 +27,23 @@
   border-style: solid;
 }
 
-.nem-title, .nem-song, .enter-title, .enter-song, .unforgiven-title, .unforgiven-song {
-  text-align: center;
+.search-bar {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  border: 1px solid #ccc;
+}
+
+.main-img {
+  position: initial;
+  padding-bottom: 50%;
 }
   
-  
- 
+.video {
+  position: absolute;
+    left: 50%;
+    top: 45%;
+}
