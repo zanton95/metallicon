@@ -42,8 +42,38 @@
   padding-bottom: 50%;
 }
   
-.video {
-  position: absolute;
-    left: 50%;
-    top: 45%;
 }
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.top-left {
+  position: absolute;
+  top: 150px;
+  left: 120px;
+  
+}
+
+.middle-head {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+}
+
+.video-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  left: 160px;
+  bottom: 750px;
+}
+
+.middle-paragraph {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+}
+
