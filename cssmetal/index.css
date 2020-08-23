@@ -1,3 +1,12 @@
+.web-container {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    
+} 
+
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +34,9 @@
 
 .songs-table td {
   border-style: solid;
+  width: 950px;
+  height: 45px;
+  padding-left: 10px;
 }
 
 .search-bar {
@@ -32,14 +44,16 @@
   padding: 6px;
   border: none;
   margin-top: 8px;
-  margin-right: 16px;
+  margin-right: 115px;
   font-size: 17px;
   border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .main-img {
   position: initial;
   padding-bottom: 50%;
+  right: 0;
 }
   
 }
@@ -49,7 +63,7 @@
   text-align: center;
   color: white;
 }
-
+f
 .top-left {
   position: absolute;
   top: 150px;
@@ -60,20 +74,24 @@
 .middle-head {
   position: absolute;
   bottom: 100px;
-  left: 50%;
+  left: 40%;
 }
 
 .video-container {
   position: relative;
   text-align: center;
   color: white;
-  left: 160px;
+  left: 5x;
   bottom: 750px;
 }
 
 .middle-paragraph {
   position: absolute;
   bottom: 50px;
-  left: 50%;
+  left: 40%;
 }
 
+.song-link {
+  color: black;
+   text-decoration: none;
+}
