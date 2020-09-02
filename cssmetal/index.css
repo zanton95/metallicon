@@ -11,6 +11,10 @@
   margin: 0;
   padding: 0;
 }
+
+@font-face {
+  font-family: 'Metallica'; src: url('../fonts/PASTOROF.TTF') ;
+}
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -21,8 +25,9 @@
  }
   .topnav a {
   color: aliceblue;
-  font-size: 17px;
+  font-size: 35px;
   padding-right: 30px;
+  font-family: 'Metallica'
 }
 .songs-table {
   margin: 0 auto;
@@ -63,11 +68,12 @@
   text-align: center;
   color: white;
 }
-f
+
 .top-left {
-  position: absolute;
-  top: 150px;
-  left: 120px;
+  position: relative;
+  bottom: 1550px;
+  left: 100px;
+  font-family: 'Metallica'
   
 }
 
@@ -75,6 +81,8 @@ f
   position: absolute;
   bottom: 100px;
   left: 40%;
+  font-size: 20px;
+  font-family: 'Metallica'
 }
 
 .video-container {
@@ -89,6 +97,14 @@ f
   position: absolute;
   bottom: 50px;
   left: 40%;
+  font-family: 'Metallica'
+}
+
+.bottom-paragraph {
+  position: absolute;
+  top: 1450px;
+  left: 46%;
+  font-family: 'Metallica'
 }
 
 .song-link {
