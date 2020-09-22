@@ -27,7 +27,7 @@
   color: aliceblue;
   font-size: 35px;
   padding-right: 30px;
-  font-family: 'Metallica'
+  font-family: 'Metallica';
 }
 .songs-table {
   margin: 0 auto;
@@ -73,41 +73,68 @@
   position: relative;
   bottom: 1550px;
   left: 100px;
-  font-family: 'Metallica'
+  font-size: 75px;
+  font-family: 'Metallica';
+  color: #1d1d1d;
+  
+  
   
 }
 
 .middle-head {
   position: absolute;
-  bottom: 100px;
-  left: 40%;
-  font-size: 20px;
-  font-family: 'Metallica'
+  bottom: 70px;
+  left: 38%;
+  font-size: 30px;
+  font-family: 'Metallica';
+  color: #1d1d1d;
 }
 
 .video-container {
   position: relative;
   text-align: center;
   color: white;
-  left: 5x;
-  bottom: 750px;
+  left: 5px;
+  bottom: 825px;
 }
 
 .middle-paragraph {
   position: absolute;
   bottom: 50px;
   left: 40%;
-  font-family: 'Metallica'
+  color: #1d1d1d;
+  font-size: 18px;
+  font-style: italic;
 }
 
 .bottom-paragraph {
   position: absolute;
-  top: 1450px;
-  left: 46%;
-  font-family: 'Metallica'
+  top: 1435px;
+  left: 45%;
+  font-family: 'Metallica';
+  color: #1d1d1d;
+  font-size: 42px;
 }
 
 .song-link {
   color: black;
    text-decoration: none;
+}
+
+.icon-bar {
+  position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 56px;
+    font-size: 19px;
+}
+
+.facebook, .twitter, .instagram{
+  color: white;
 }
