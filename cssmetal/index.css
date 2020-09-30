@@ -164,20 +164,19 @@ li {
   color: white;
 }
 
-.nem-title {
+.nem-title, .unforgiven-title, .enter-title {
   text-align: center;
   margin-top: 15px;
- 
- 
+  color: #333;
  }
-.nem-song {
+
+ .nem-song, .unforgiven-song, .enter-song {
   margin-bottom: 100px;
   margin-top: 60px;
   text-align: center;
   font-size: 21px;
+  color: #333;
  
 }
 
-.nem {
-  display: block;
-}
+
