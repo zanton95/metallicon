@@ -7,7 +7,7 @@
     
 } 
 
-* {
+body {
   margin: 0;
   padding: 0;
   
@@ -19,16 +19,18 @@
 .topnav {
   overflow: hidden;
   background-color: #333;
-  padding: 29px  31px;
+  padding: 18px  31px;
   width: 100%;
-  float: left;
-  height: ;
+ 
  }
+
+
   .topnav a {
   color: aliceblue;
   font-size: 35px;
-  padding-right: 30px;
+  padding-right: 25px;
   font-family: 'Metallica';
+  
 }
 
 .songs-list {
@@ -58,11 +60,10 @@ li {
 
 
 .search-bar {
-  float: right;
   padding: 6px;
   border: none;
   margin-top: 8px;
-  margin-right: 115px;
+  margin-right: 200px;
   font-size: 17px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -154,13 +155,13 @@ li {
 
 .nem-title, .unforgiven-title, .enter-title {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 41px;
   color: #333;
  }
 
  .nem-song, .unforgiven-song, .enter-song {
   margin-bottom: 100px;
-  margin-top: 60px;
+  margin-top: 22px;
   text-align: center;
   font-size: 21px;
   color: #333;
