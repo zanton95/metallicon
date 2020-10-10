@@ -62,11 +62,10 @@ li {
 .search-bar {
   padding: 6px;
   border: none;
-  margin-top: 8px;
-  margin-right: 200px;
   font-size: 17px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-left: 1400px;
 }
 
 .main-img {
