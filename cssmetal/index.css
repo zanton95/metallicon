@@ -32,32 +32,32 @@ body {
   font-family: 'Metallica';
   
 }
-
+hr {
+  border-color: black;
+  border-top: 0px solid #000000;
+}
 .songs-list {
-  list-style-type: none;
-  border-style: solid;
-  border-radius: 5px;
-  border-width: 1px;
-  background-color:black;
-  padding: 0;
-  margin-left: 1em;
-  
+ border-style: solid;
+ width: 830px;
+ list-style-type: none;
+ border-width: 1px;
+ padding-left: 0;
+ margin-left: 25%;
+ border-radius: 5px;
+ display: block;
 }
 
 li {
-  background-color: white;
-        margin: 1px 0 0 0;
-        padding: 0;
-        list-style-type: none;
-        width: 950px;
-  height: 45px;
-  padding-left: 10px;
-  
+ padding-top: 5px;
+ padding-bottom: 5px;
 }
  li a {
    color: black;
  }
-
+.songs-title {
+  color:  #1d1d1d;
+  margin-left: 25%;
+}
 
 .search-bar {
   padding: 6px;
