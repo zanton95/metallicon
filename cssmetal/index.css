@@ -30,6 +30,7 @@ body {
   font-size: 35px;
   padding-right: 25px;
   font-family: 'Metallica';
+  text-decoration: none;
   
 }
 hr {
@@ -47,15 +48,25 @@ hr {
  display: block;
 }
 
+
 li {
- padding-top: 5px;
+  padding-top: 5px;
  padding-bottom: 5px;
 }
- li a {
+ 
+li a {
    color: black;
+   color: inherit;
+   display: block;
  }
+ 
+
+ul li:hover {
+background: #e0dddd;
+color: white;
+}
 .songs-title {
-  color:  #1d1d1d;
+  color: #333;
   margin-left: 25%;
 }
 
