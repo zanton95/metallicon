@@ -19,8 +19,8 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #333;
-  padding: 18px  31px;
-  width: 100%;
+  padding: 1px  31px;
+  width: 96.75%;
  
  }
 
@@ -28,10 +28,16 @@ body {
   .topnav a {
   color: aliceblue;
   font-size: 35px;
-  padding-right: 25px;
+  margin-right: 25px;
   font-family: 'Metallica';
   text-decoration: none;
-  
+}
+
+.home{
+  margin-left: 45px;
+}
+.songs{
+  margin-left: 5px;
 }
 hr {
   border-color: black;
@@ -76,11 +82,11 @@ color: white;
   font-size: 17px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-left: 1400px;
+  margin-left: 1500px;
 }
 
 .main-img {
-  position: initial;
+  position: absolute;
   padding-bottom: 50%;
   right: 0;
 }
@@ -88,15 +94,15 @@ color: white;
 }
 
 .container {
-  position: relative;
+  position: absolute;
   text-align: center;
   color: white;
 }
 
 .top-left {
-  position: relative;
-  bottom: 1550px;
-  left: 100px;
+  position: absolute;
+  margin-bottom: 80%;
+  margin-left: 90px;
   font-size: 75px;
   font-family: 'Metallica';
   color: #1d1d1d;
@@ -115,11 +121,11 @@ color: white;
 }
 
 .video-container {
-  position: relative;
+  position: absolute;
   text-align: center;
   color: white;
-  left: 5px;
-  bottom: 825px;
+  left: 31%;
+  margin-top: 880px;
 }
 
 .middle-paragraph {
@@ -133,8 +139,8 @@ color: white;
 
 .bottom-paragraph {
   position: absolute;
-  top: 1435px;
-  left: 45%;
+  top: 1365px;
+  left: 44%;
   font-family: 'Metallica';
   color: #1d1d1d;
   font-size: 42px;
