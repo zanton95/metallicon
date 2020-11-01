@@ -13,6 +13,7 @@ body {
   
 }
 
+
 @font-face {
   font-family: 'Metallica'; src: url('../fonts/PASTOROF.TTF') ;
 }
@@ -71,6 +72,7 @@ li a {
 ul li:hover {
 background: #e0dddd;
 color: white;
+padding: ;
 }
 .songs-title {
   color: #333;
@@ -90,6 +92,7 @@ color: white;
   position: absolute;
   padding-bottom: 50%;
   right: 0;
+  margin-bottom: 0px;
 }
   
 }
