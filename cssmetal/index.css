@@ -13,19 +13,17 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px; */
-    overflow-x: hidden; 
+    /* overflow-x: hidden;  */
     
 } 
 
 
 
 .topnav {
-  overflow-x: hidden;
   background-color: #333;
-  padding-right: 100%;
-  width: 96.75%;
+  width: 100%;
   position: relative;
- 
+  padding-top: 33px;
  }
 
 
@@ -35,11 +33,24 @@ body {
   font-size: 35px;
   font-family: 'Metallica';
   text-decoration: none;
-  margin-top: 10px;
-}
+  padding: 20px;
+  }
+ 
+  .topnav a:hover {
+    color: rgba(255, 166, 0, 0.89);
+    background-color: grey;
+    padding: ;
+  }
+ 
 .home {
-  margin-left: 100px;
-  margin-top: 110px;
+  margin-left: 64px;
+  bottom: 17px;
+  
+}
+
+.songs {
+  
+  bottom: 17px;
 }
 
 
@@ -82,74 +93,81 @@ padding: ;
 }
 
 .search-bar {
-  padding: 6px;
-  border: none;
+  position: relative;
+  padding: 5px 5px;
   font-size: 17px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-left: 1500px;
+  border-radius: 4px;
+  left: 1370px;
+  width: 195px;
+  bottom: 11px;
 }
 
 .main-img {
+  width: 100%;
   position: relative;
-  padding-bottom:;
-  right: 0;
-  margin-bottom: 0px;
   overflow: hidden;
   z-index: -1;
-}
+} 
   
 }
 
 .container {
-  position: relative;
-  text-align: center;
-  color: white;
+  /* position: relative; */
+  /* text-align: center;
+  color: white; */
 }
 
 .top-left {
   position: relative;
-  margin:  ;
-  margin-left:4.3% ;
   font-size: 75px;
   font-family: 'Metallica';
   color: #1d1d1d;
+  bottom: 630px;
+  left: 82px;
+  width: 450px;
   
 }
 
 .middle-head {
   position: relative ;
-  bottom: ;
+  bottom: 149px;
   left: ;
-  font-size: ;
+  text-align: center;
+  font-size: 64px;
   font-family: 'Metallica';
-  color: #1d1d1d;
+  color: #333333;
 }
 
 .video-container {
   position: relative;
   text-align: center;
   color: white;
-  left: ;
-  margin-top:;
+  bottom: 280px;
+  height: 277px;
+}
+.video {
+ 
+  
+
 }
 
 .middle-paragraph {
   position: relative;
-  bottom: ;
-  left: ;
-  color: #1d1d1d;
+  color: #333333;
   font-size: 18px;
   font-style: italic;
+  bottom: 188px;
+  text-align: center;
 }
 
 .bottom-paragraph {
   position: relative;
-  top: ;
-  left: ;
+  top: 245px;
   font-family: 'Metallica';
-  color: #1d1d1d;
+  color: #333333;
   font-size: 42px;
+  text-align: center;
 }
 
 .song-link {
