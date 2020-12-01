@@ -40,7 +40,7 @@ body {
   .topnav a:hover {
     color: rgba(255, 166, 0, 0.89);
     background-color: rgb(80, 77, 77);
-    padding: ;
+    
   }
  
 .home {
@@ -60,14 +60,14 @@ body {
   font-size: 17px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  left: 1370px;
+  left: 72%;
   width: 195px;
   bottom: 11px;
 }
 
 .topnav i {
   position: relative;
-  left: 1340px;
+  left: 70.5%;
   bottom: 11px;
   color:#9e9c9c;
   font-size: 17px;
@@ -80,7 +80,7 @@ body {
   z-index: -1;
 } 
   
-}
+
 
 .container {
   /* position: relative; */
@@ -94,7 +94,7 @@ body {
   font-family: 'Metallica';
   color: #1d1d1d;
   bottom: 630px;
-  left: 82px;
+  left: 4.3%;
   width: 450px;
   
 }
