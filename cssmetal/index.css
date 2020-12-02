@@ -1,13 +1,3 @@
-/* 
-  Lev notes:
-   - There are other places with 'Lev notes' here, go over them and delete them afterwards.
-   - General note - this looks really good man. Good and understandbale css selector names, no duplicate code that's being copy pasted a million times,
-     and it looks very clean overall. Really good job, it's pleasant to look at!
-   - Take a look at the warnings (yellow / orange underline in VSCode) and error (red underline) on this page. If you mouseover a warning or error it will tell you the issue.
-     Not all of these are always critical, but every browser and every browser version could interpret these things a little differently so it's good to take care of these.
-     Sometimes you know an error shows and you decide to keep it knowingly for some reason and it's ok, but anything not intentional - take care of 
-     (it's usually just deleting empty lines or something)
- */
 
 body {
   margin: 0;
@@ -20,20 +10,10 @@ body {
 }
 
 /* Index page */
-.web-container {
-    /* width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px; */
-    /* overflow-x: hidden;  */
-    
-} 
-
-
 
 .topnav {
   background-color: #333;
-  width: 100%;
+  width: 1903px;
   position: relative;
   padding-top: 33px;
  }
@@ -71,43 +51,38 @@ body {
   font-size: 17px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  left: 72%;
+  float: right;
   width: 195px;
   bottom: 11px;
+  right: 65px;
 }
 
 .topnav i {
   position: relative;
-  left: 70.5%;
+  float: right;
   bottom: 11px;
   color:#9e9c9c;
   font-size: 17px;
 }
 
 .main-img {
-  width: 100%;
+  width: 1903px;
+  height: auto;
+  background-position-y: center;
   position: relative;
   overflow: hidden;
   z-index: -1;
 } 
   
 
-
-.container {
-  /* position: relative; */
-  /* text-align: center;
-  color: white; */
-}
-
 .top-left {
   position: relative;
   font-size: 75px;
   font-family: 'Metallica';
   color: #1d1d1d;
-  bottom: 630px;
-  left: 4.3%;
-  width: 450px;
-  
+  bottom: 630.5px;
+  left: 85px;
+  width: 450px;  
 }
 
 .middle-head {
@@ -126,11 +101,6 @@ body {
   color: white;
   bottom: 280px;
   height: 277px;
-}
-.video {
- 
-  
-
 }
 
 .middle-paragraph {
@@ -153,11 +123,6 @@ body {
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Songs page !!!!!!!!!!!!!!!!!!!!!!!!! */
 
-.songs-list-container {
-  /* margin-top: 50px;
-  margin-left: 26.5%; */
-}
-
 .songs-list {
   border-style: solid;
   width: 890px;
@@ -177,18 +142,6 @@ hr {
   
 }
 
-li {
-  /* padding-top: 5px;
- padding-bottom: 5px; */
-}
- 
-/* li a {
-   color: black;
-   color: inherit;
-   display: block;
- } */
- 
-
 ul li:hover {
 background: #f1eeeec9;
 color: white;
@@ -203,38 +156,12 @@ color: white;
   margin-left: 26.5%;
 }
 
-/* 
-  Lev notes:
-   - Take a look at the note at the bottom about the titles before reading this one.
-   - This is a similar case - you can see thtat song-ling-1, song-ling-2 and song-ling-3 are exactly the same - you could use a single class in your html and a single css selector here
-     for these.
-     The 'tell' here that made me look into this is that you started adding numbers at the end here. Again, if there are 1000 songs in this website, how many classes you'd have to create?
-   - Also if you decide you're using numbers in html classes, there usually needs to be a reason because otherwise it's not very clear to other programmers what the class is used for.
-     For example - 'song-link' is very clear, if I see it in the css I'll know more or less what to expect in the code where it's used. 
-     If it were 'link-1' I'd know less about it and maybe thing this is used for all of the links in the website or that I need to check the code to understand.
-*/
-.song-link-1 {
+.song-link {
   color: #333333;
    text-decoration: none;
    display: block;
    padding-bottom: 12px;
   padding-top: 12px;
-}
-
-.song-link-2 {
-  text-decoration: none;
-  color: #333333;
-  display: block;
-  padding-bottom: 12px;
-  padding-top: 12px;
-}
-
-.song-link-3 {
-  text-decoration: none;
-  padding-bottom: 12px;
-  padding-top: 12px;
-  color: #333333;
-  display: block;
 }
 
 /* bottom bar  */
@@ -258,23 +185,13 @@ color: white;
 
 /* The Songs  */
 
-/* 
-  Lev Notes:
-   - Notice that these specific names are all basically the 'song title' for each song. 
-     You can see that you're using 3 classes in your html but they're all used for the same reason - why not use the same class for all of them? :)
-   - A rule of thumb for these things is that you should create classes that name things in your html, 
-     like containers, wrappers (some div you use to put around something to maybe center it or manupulate the whole view together) and items that are general names for the items
-     in your html like songs, titles etc. If you find yourself creating a class per song title, stop to think whehter that's something you want to do on purpose for some reason
-     (could happen sometimes) or if you just missed something and should name things differently.
-     For example in this case - how many of these classes will you have to create if you have 1000 songs in your app?
- */
-.nem-title, .unforgiven-title, .enter-title {
+.songs-titles {
   text-align: center;
   margin-top: 41px;
   color: #333;
  }
 
- .nem-song, .unforgiven-song, .enter-song {
+ .lyrics {
   margin-bottom: 100px;
   margin-top: 22px;
   text-align: center;
