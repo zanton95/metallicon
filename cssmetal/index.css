@@ -13,7 +13,6 @@ body {
 
 .topnav {
   background-color: #333;
-  width: 1903px;
   position: relative;
   padding-top: 33px;
  }
@@ -64,11 +63,11 @@ body {
   color:#9e9c9c;
   font-size: 17px;
 }
+.img-container {
+  overflow-x: hidden;
+}
 
 .main-img {
-  width: 1903px;
-  height: auto;
-  background-position-y: center;
   position: relative;
   overflow: hidden;
   z-index: -1;
