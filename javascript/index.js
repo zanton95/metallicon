@@ -1,5 +1,5 @@
 function myFunctionIndex(){
-    alert ("Page name: <Index>");
+    alert ("Page name: <Home>");
 };
 function myFunctionSongs(){
     alert ("Page name: <Songs>");
@@ -13,6 +13,6 @@ function myFunctionNothingElse(){
 function myFunctionUnforgiven(){
     alert ("Page name: <The Unforgiven II>");
 };
-// test ;
-
+var songNames = ["Nothing Else Matters", ];
+var songs = [];
 
