@@ -1,7 +1,12 @@
 
 function myFunctionIndex(){
-    alert (songs[0].title);
+   var sing = [
+        alert (songs[0].lyrics),
+        "sdfdsf", 
+    ]  
 };
+
+
 function myFunctionSongs(){
     alert ("Page name: <Songs>");
 };
@@ -20,9 +25,15 @@ var songs = [
     {title:"Enter Sandman", lyrics:"Say your prayers little one Don't forget, my son To include everyone Tuck you in, warm within Keep you free from sin 'Till the sandman he comes Sleep with one eye open Gripping your pillow tight Exit, light Enter, night Take my hand We're off to never-never land"}, 
     2,
 ]
-// alert (JSON.stringify(fullSong)); --- safe keeping
+ 
+var indexTest = document.getElementsByClassName.index-page;
 
-// var text = `kjkj`;
+if (window.addEventListener){
+    window.addEventListener('index-page', myFunctionIndex[0])
+}
+
+
+
 
 // var person = {
 // FirstName: `Anton`,
@@ -31,3 +42,4 @@ var songs = [
 
 // var greeting = "hello" + " " + person.FirstName + " " + person.LastName + "!";
 // var easierGreeting = `Hello ${person.FirstName} ${person.LastName}!`
+// sadasdsd
