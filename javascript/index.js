@@ -1,11 +1,15 @@
 
-function myFunctionIndex(){
-   var sing = [
-        alert (songs[0].lyrics),
-        "sdfdsf", 
-    ]  
-};
 
+var songs = [
+    {title:"Enter Sandman", lyrics:"Say your prayers little one Don't forget, my son To include everyone Tuck you in, warm within Keep you free from sin 'Till the sandman he comes Sleep with one eye open Gripping your pillow tight Exit, light Enter, night Take my hand We're off to never-never land"}, 
+    2,
+]
+ 
+var indexTest = document.getElementById("index-page");
+
+console.log(20);
+
+function myFunctionIndex(){ alert (songs[0].lyrics)};
 
 function myFunctionSongs(){
     alert ("Page name: <Songs>");
@@ -19,20 +23,15 @@ function myFunctionNothingElse(){
 function myFunctionUnforgiven(){
     alert ("Page name: <The Unforgiven II>");
 };
-var songNames = ["Enter Sandman", "Nothing Else Matters", "The Unforgiven II"];
+console.log(21);
 
-var songs = [
-    {title:"Enter Sandman", lyrics:"Say your prayers little one Don't forget, my son To include everyone Tuck you in, warm within Keep you free from sin 'Till the sandman he comes Sleep with one eye open Gripping your pillow tight Exit, light Enter, night Take my hand We're off to never-never land"}, 
-    2,
-]
- 
-var indexTest = document.getElementsByClassName.index-page;
+indexTest.addEventListener("load", function myFunctionIndex(){ alert (songs[0].lyrics)});
 
-if (window.addEventListener){
-    window.addEventListener('index-page', myFunctionIndex[0])
-}
+window.addEventListener('load', (event) => {
+    console.log('page is fully loaded');
+  });
 
-
+console.log(22);
 
 
 // var person = {
