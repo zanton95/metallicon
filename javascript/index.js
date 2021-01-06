@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", nameAndLyrics);
-
+document.getElementsByClassName("songs-titles").placeholder="The Unforgiven II";
 
 var songs = [
     {title:"Nothing Else Matters", lyrics:"So close, no matter how far \r Couldn't be much more from the heart \r Forever trusting who we are \r And nothing else matters \r \r Never opened myself this way \r Life is ours, we live it our way \r All these words I don't just say \r And nothing else matters \r \r Trust I seek and I find in you \r Every day for us something new \r Open mind for a different view \r And nothing else matters \r \r Never cared for what they do \r Never cared for what they know \r But I know \r \r So close, no matter how far \r Couldn't be much more from the heart \r Forever trusting who we are \r And nothing else matters \r \r Never cared for what they do \r Never cared for what they know \r But I know \r \r I never opened myself this way \r Life is ours, we live it our way \r All these words I don't just say \r And nothing else matters \r \r Trust I seek and I find in you \r Every day for us, something new \r Open mind for a different view \r And nothing else matters \r \r Never cared for what they say \r Never cared for games they play \r Never cared for what they do \r Never cared for what they know \r And I know, yeah! \r \r So close, no matter how far \r Couldn't be much more from the heart \r Forever trusting who we are \r No, nothing else matters \r" },
