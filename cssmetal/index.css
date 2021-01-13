@@ -184,13 +184,13 @@ color: white;
 
 /* The Songs  */
 
-.songs-titles {
+#songs-titles {
   text-align: center;
   margin-top: 41px;
   color: #333;
  }
 
- .lyrics {
+ #lyrics {
   margin-bottom: 100px;
   margin-top: 22px;
   text-align: center;
