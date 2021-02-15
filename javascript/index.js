@@ -11,12 +11,18 @@ document.addEventListener("DOMContentLoaded", nameAndLyrics);
 ]
 var url = document.URL;
 var urlName = "file:///C:/code/metallicon/songs.html?AntonZimin";
+
+
+const queryStr = "name=Anton";
+const usp = new URLSearchParams(queryStr);
+const myName = usp.get("name");
+alert(myName)
+
+
 function getFileName(url) {
     return url.split("/").pop();
   }
 
- console.log(getFileName(url));
- 
  function nameAndLyrics (){
     if (getFileName(url) === "index.html"){
         alert("Main Page");
@@ -40,6 +46,7 @@ function getFileName(url) {
 
     }
 }
+
 
 
 
