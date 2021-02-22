@@ -10,13 +10,12 @@ document.addEventListener("DOMContentLoaded", nameAndLyrics);
     {title:"The Unforgiven II", lyrics:"Lay beside me and tell me what they've done <br> And speak the words I wanna hear to make my demons run <br> The door is locked now but it's open if you're true <br> If you can understand the me then I can understand the you <br> <br> Lay beside me, under wicked sky <br> Through black of day, dark of night, we share this, paralyzed <br> The door cracks open but there's no sun shining through <br> Black heart scarring darker still but there's no sun shining through <br> No there's no sun shining through, no there's no sun shining <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Come lay beside me, this won't hurt I swear <br> She loves me not, she loves me still but she'll never love again <br> She lay beside me but she'll be there when I'm gone <br> Black hearts scarring darker still, yes she'll be there when I'm gone <br> Yes she'll be there when I'm gone, dead sure she'll be there? <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Lay beside me, tell me what I've done <br> The door is closed so are your eyes <br> But now I see the sun, now I see the sun <br> <br> Yes now I see it <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you <br> <br> Yeah, what I've felt, what I've known <br> So sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits <br> The one who waits for you <br> <br> Oh, what I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? (so I dub thee unforgiven) <br> <br> Oh, what I've felt <br> Oh, what I've known <br> I'll take this key and I'll bury it in you <br> Because you're unforgiven too <br> <br> Never free, never me <br> 'Cause you're unforgiven too, oh oh" },
 ]
 var url = document.URL;
-var urlName = ["file:///C:/code/metallicon/songs.html?Nothing Else Matters", 
-"file:///C:/code/metallicon/songs.html?The Unforgiven II"];
+var queryParam = url.split("?")[1];
+var songNameFromUrl = queryParam.split("=")[1];
+var songNameUrlString = songNameFromUrl.replaceAll("%20", " ");
+alert(songNameUrlString);
 
 
-const queryStr = "songName=Enter Sandman";
-const usp = new URLSearchParams(queryStr);
-const songTitleName = usp.get("songName");
 
 
 function getFileName(url) {
@@ -31,21 +30,20 @@ function getFileName(url) {
     else if (getFileName(url) === "songs.html"){
         alert("Songs Page");
     }
-    else if (getFileName(url) === "nothingelse.html"){
+    else if (getFileName(url) === "nothingelse.html?name=Nothing%20Else%20Matters"){
         document.getElementById("songs-titles").innerHTML = songs[0].title;
         document.getElementById("lyrics").innerHTML = songs[0].lyrics;
-        alert(urlName[0].split("?")[1]);
+        
         
     }
-    else if (getFileName(url) === "entersandman.html"){
+    else if (getFileName(url) === "entersandman.html?name=Enter%20Sandman"){
         document.getElementById("songs-titles").innerHTML = songs[1].title;
         document.getElementById("lyrics").innerHTML = songs[1].lyrics;
-        alert(songTitleName);
+        
     }
-    else if (getFileName(url) === "unforgiven.html"){
+    else if (getFileName(url) === "unforgiven.html?name=The%20Unforgiven%20II"){
         document.getElementById("songs-titles").innerHTML = songs[2].title;
         document.getElementById("lyrics").innerHTML = songs[2].lyrics;
-        alert(urlName[1].split("?")[1]);
     }
 }
 
