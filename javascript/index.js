@@ -13,7 +13,7 @@ var url = document.URL;
 var queryParam = url.split("?")[1];
 var songNameFromUrl = queryParam.split("=")[1];
 var songNameUrlString = songNameFromUrl.replaceAll("%20", " ");
-alert(songNameUrlString);
+
 
 
 
@@ -24,24 +24,24 @@ function getFileName(url) {
 
  function nameAndLyrics (){
     if (getFileName(url) === "index.html"){
-        alert("Main Page");
+        
         
     }
     else if (getFileName(url) === "songs.html"){
-        alert("Songs Page");
+        
     }
-    else if (getFileName(url) === "nothingelse.html?name=Nothing%20Else%20Matters"){
+    else if (getFileName(url) === "titleAndLyrics.html?name=Nothing%20Else%20Matters"){
         document.getElementById("songs-titles").innerHTML = songs[0].title;
         document.getElementById("lyrics").innerHTML = songs[0].lyrics;
         
         
     }
-    else if (getFileName(url) === "entersandman.html?name=Enter%20Sandman"){
+    else if (getFileName(url) === "titleAndLyrics.html?name=Enter%20Sandman"){
         document.getElementById("songs-titles").innerHTML = songs[1].title;
         document.getElementById("lyrics").innerHTML = songs[1].lyrics;
         
     }
-    else if (getFileName(url) === "unforgiven.html?name=The%20Unforgiven%20II"){
+    else if (getFileName(url) === "titleAndLyrics.html?name=The%20Unforgiven%20II"){
         document.getElementById("songs-titles").innerHTML = songs[2].title;
         document.getElementById("lyrics").innerHTML = songs[2].lyrics;
     }
@@ -50,7 +50,7 @@ function getFileName(url) {
 
 
 
-
+//sadasdsad//
 
 
 
