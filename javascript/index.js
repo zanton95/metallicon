@@ -4,10 +4,6 @@
 
 document.addEventListener("DOMContentLoaded", nameAndLyrics);
 
-// for (songs x = 0; x <=2 ; x++) {
-//     console.log("50cent")
-//   };
-
 var songs = [
     {title:"Nothing Else Matters", lyrics:"So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> And nothing else matters <br> <br> Never opened myself this way <br> Life is ours, we live it our way <br> All these words I don't just say <br> And nothing else matters <br> <br> Trust I seek and I find in you <br> Every day for us something new <br> Open mind for a different view <br> And nothing else matters <br> <br> Never cared for what they do <br> Never cared for what they know <br> But I know <br> <br> So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> And nothing else matters <br> <br> Never cared for what they do <br> Never cared for what they know <br> But I know <br> <br> I never opened myself this way <br> Life is ours, we live it our way <br> All these words I don't just say <br> And nothing else matters <br> <br> Trust I seek and I find in you <br> Every day for us, something new <br> Open mind for a different view <br> And nothing else matters <br> <br> Never cared for what they say <br> Never cared for games they play <br> Never cared for what they do <br> Never cared for what they know <br> And I know, yeah! <br> <br> So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> No, nothing else matters <br>" },
     {title:"Enter Sandman", lyrics:"Say your prayers little one <br> Don't forget, my son <br> To include everyone <br> Tuck you in, warm within <br> Keep you free from sin <br> 'Till the sandman he comes <br> Sleep with one eye open <br> Gripping your pillow tight <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Somethings wrong, shut the light <br> Heavy thoughts tonight <br> And they aren't of Snow White <br> Dreams of war, dreams of liars <br> Dreams of dragon's fire <br> And of things that will bite <br> Sleep with one eye open <br> Gripping your pillow tight <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Now I lay me down to sleep <br> Now I lay me down to sleep <br> I pray the Lord my soul to keep <br> I pray the Lord my soul to keep <br> If I die before I wake <br> If I die before I wake <br> I pray the lord my soul to take <br> I pray the lord my soul to take <br> <br> Hush little baby, don't say a word <br> And never mind that noise you heard <br> It's just the beasts under your bed <br> In your closet, in your head <br> <br> Exit, light <br> Enter, night <br> Grain of sand <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Yeah! <br> <br> We're off to never-never land <br> Take my hand <br> We're off to never-never land <br> Take my hand"}, 
@@ -17,9 +13,12 @@ var url = document.URL;
 var queryParam = url.split("?")[1];
 var songNameFromUrl = queryParam.split("=")[1];
 var songNameUrlString = songNameFromUrl.replaceAll("%20", " ");
+var arrayLength = songs.length;
 
 
-
+for (var i = 0; i < arrayLength; i++) {
+    console.log(5)
+}
 
 
 function getFileName(url) {
@@ -27,14 +26,7 @@ function getFileName(url) {
   }
 
  function nameAndLyrics (){
-    if (getFileName(url) === "index.html"){
-        
-        
-    }
-    else if (getFileName(url) === "songs.html"){
-        
-    }
-    else if (getFileName(url) === "titleAndLyrics.html?name=Nothing%20Else%20Matters"){
+     if (getFileName(url) === "titleAndLyrics.html?name=Nothing%20Else%20Matters"){
         document.getElementById("songs-titles").innerHTML = songs[0].title;
         document.getElementById("lyrics").innerHTML = songs[0].lyrics;
         
