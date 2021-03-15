@@ -25,7 +25,21 @@ function getFileName(url) {
     return url.split("/").pop();
   }
 
- function nameAndLyrics (){
+ function nameAndLyrics () {
+    /**
+     * Lev:
+     * Ok, so now that we're back here after experiencing more with for loops, let's understand what we need to do here from the beginning.
+     * When this function is called you have two things in your hands (so to speak) - the url and an array of songs.
+     * You can get the name of the song that the user clicked from the url, like you already do.
+     * After this, you need to find that song in the array. If you're having troubles finding it I suggest you try to debug the code by console-logging the values you're working with,
+     * to see why it doesn't work.
+     * 
+     * Once you find the song in the array, you can take it's title and lyrics and populate it into your html. More importantly, you can remove the older code, and starting from that point,
+     * No matter how many songs you have - you don't need to change your code!
+     * 
+     * Also, don't worry if this is a little hard - these are the kinds of things that when you get them you'll start doing them without thinking much.
+     */
+
      if (getFileName(url) === "titleAndLyrics.html?name=Nothing%20Else%20Matters"){
         document.getElementById("songs-titles").innerHTML = songs[0].title;
         document.getElementById("lyrics").innerHTML = songs[0].lyrics;
