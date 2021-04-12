@@ -9,59 +9,39 @@ var songs = [
     {title:"Enter Sandman", lyrics:"Say your prayers little one <br> Don't forget, my son <br> To include everyone <br> Tuck you in, warm within <br> Keep you free from sin <br> 'Till the sandman he comes <br> Sleep with one eye open <br> Gripping your pillow tight <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Somethings wrong, shut the light <br> Heavy thoughts tonight <br> And they aren't of Snow White <br> Dreams of war, dreams of liars <br> Dreams of dragon's fire <br> And of things that will bite <br> Sleep with one eye open <br> Gripping your pillow tight <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Now I lay me down to sleep <br> Now I lay me down to sleep <br> I pray the Lord my soul to keep <br> I pray the Lord my soul to keep <br> If I die before I wake <br> If I die before I wake <br> I pray the lord my soul to take <br> I pray the lord my soul to take <br> <br> Hush little baby, don't say a word <br> And never mind that noise you heard <br> It's just the beasts under your bed <br> In your closet, in your head <br> <br> Exit, light <br> Enter, night <br> Grain of sand <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Yeah! <br> <br> We're off to never-never land <br> Take my hand <br> We're off to never-never land <br> Take my hand"}, 
     {title:"The Unforgiven II", lyrics:"Lay beside me and tell me what they've done <br> And speak the words I wanna hear to make my demons run <br> The door is locked now but it's open if you're true <br> If you can understand the me then I can understand the you <br> <br> Lay beside me, under wicked sky <br> Through black of day, dark of night, we share this, paralyzed <br> The door cracks open but there's no sun shining through <br> Black heart scarring darker still but there's no sun shining through <br> No there's no sun shining through, no there's no sun shining <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Come lay beside me, this won't hurt I swear <br> She loves me not, she loves me still but she'll never love again <br> She lay beside me but she'll be there when I'm gone <br> Black hearts scarring darker still, yes she'll be there when I'm gone <br> Yes she'll be there when I'm gone, dead sure she'll be there? <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Lay beside me, tell me what I've done <br> The door is closed so are your eyes <br> But now I see the sun, now I see the sun <br> <br> Yes now I see it <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you <br> <br> Yeah, what I've felt, what I've known <br> So sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits <br> The one who waits for you <br> <br> Oh, what I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? (so I dub thee unforgiven) <br> <br> Oh, what I've felt <br> Oh, what I've known <br> I'll take this key and I'll bury it in you <br> Because you're unforgiven too <br> <br> Never free, never me <br> 'Cause you're unforgiven too, oh oh" },
 ]
-var url = document.URL;
-var queryParam = url.split("?")[1];
-var songNameFromUrl = queryParam.split("=")[1];
-var songNameUrlString = songNameFromUrl.replaceAll("%20", " ");
-var arrayLength = songs.length;
-
-
-for (var i = 0; i < arrayLength; i++) {
-    console.log(5)
-}
-
-
 function getFileName(url) {
     return url.split("/").pop();
   }
 
- function nameAndLyrics () {
-    /**
-     * Lev:
-     * Ok, so now that we're back here after experiencing more with for loops, let's understand what we need to do here from the beginning.
-     * When this function is called you have two things in your hands (so to speak) - the url and an array of songs.
-     * You can get the name of the song that the user clicked from the url, like you already do.
-     * After this, you need to find that song in the array. If you're having troubles finding it I suggest you try to debug the code by console-logging the values you're working with,
-     * to see why it doesn't work.
-     * 
-     * Once you find the song in the array, you can take it's title and lyrics and populate it into your html. More importantly, you can remove the older code, and starting from that point,
-     * No matter how many songs you have - you don't need to change your code!
-     * 
-     * Also, don't worry if this is a little hard - these are the kinds of things that when you get them you'll start doing them without thinking much.
-     */
+  function nameAndLyrics () {
+var url = document.URL;
 
-     if (getFileName(url) === "titleAndLyrics.html?name=Nothing%20Else%20Matters"){
-        document.getElementById("songs-titles").innerHTML = songs[0].title;
-        document.getElementById("lyrics").innerHTML = songs[0].lyrics;
-        
-        
+var arrayLength = songs.length;
+
+var queryParam = url.split("?")[1];
+
+var songNameFromUrl = queryParam.split("=")[1];
+
+var songNameUrlString = songNameFromUrl.replaceAll("%20", " ");
+
+var lyricsFromArray = null;
+
+var songNameFromUrl = url.split("=")[1]; 
+
+for (var i = 0; i < arrayLength; i++) {
+    if (songs[i].title === songNameUrlString){
+        lyricsFromArray = songs[i].lyrics;
     }
-    else if (getFileName(url) === "titleAndLyrics.html?name=Enter%20Sandman"){
-        document.getElementById("songs-titles").innerHTML = songs[1].title;
-        document.getElementById("lyrics").innerHTML = songs[1].lyrics;
         
-    }
-    else if (getFileName(url) === "titleAndLyrics.html?name=The%20Unforgiven%20II"){
-        document.getElementById("songs-titles").innerHTML = songs[2].title;
-        document.getElementById("lyrics").innerHTML = songs[2].lyrics;
+    
+       document.getElementById("songs-titles").innerHTML = songNameUrlString;
+       document.getElementById("lyrics").innerHTML = lyricsFromArray;
     }
 }
 
 
+    
 
 
 
 
-
-// var greeting = "hello" + " " + person.FirstName + " " + person.LastName + "!";
-// var easierGreeting = `Hello ${person.FirstName} ${person.LastName}!`
