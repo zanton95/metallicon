@@ -1,7 +1,4 @@
 
-
-
-
 document.addEventListener("DOMContentLoaded", nameAndLyrics);
 
 var songs = [
@@ -15,33 +12,30 @@ function getFileName(url) {
 
   function nameAndLyrics () {
 var url = document.URL;
-
 var arrayLength = songs.length;
-
-var queryParam = url.split("?")[1];
-
+var queryParam = url.split("?")[2];
 var songNameFromUrl = queryParam.split("=")[1];
-
 var songNameUrlString = songNameFromUrl.replaceAll("%20", " ");
-
 var lyricsFromArray = null;
-
-var songNameFromUrl = url.split("=")[1]; 
+var songNameFromUrl = url.split("=")[2]; 
 
 for (var i = 0; i < arrayLength; i++) {
     if (songs[i].title === songNameUrlString){
         lyricsFromArray = songs[i].lyrics;
     }
-        
-    
        document.getElementById("songs-titles").innerHTML = songNameUrlString;
        document.getElementById("lyrics").innerHTML = lyricsFromArray;
     }
 }
 
 
+        console.log(document.URL.split("?")[1]);
+
+    //console.log(document.URL.split("?")[1].replaceAll("%20", " ")); ---- logs for song pages with "-"
+  
+
     
-
-
-
+    
+    
+    
 
