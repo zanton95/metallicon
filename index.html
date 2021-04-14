@@ -14,7 +14,7 @@
 <div class="web-container">
   
   <div class="topnav">
-    <a class="home" href="file:///C:/code/metallicon/index.html?view=home">Home</a>
+    <a class="home" href="file:///C:/code/metallicon/index.html?view=home?view=songs?view=single-song">Home</a>
     <a class="songs" href="file:///C:/code/metallicon/songs.html?view=songs">Songs</a>
     <input class="search-bar" type="text" placeholder="">
     <i class="fa fa-search" aria-hidden="true"></i>
@@ -48,19 +48,11 @@
    
 </div>
 
-
-
-<!-- Lev: This is way to run JS for sure, but since you already have an index.js, why not run this line from there? :) -->
-
-<!-- /**
- * Lev: 
- * It's really cool that you've found how to use local storage - this is definately a way to pass information between pages.
- * I'm impressed you did this and made it work!
- * This is usually used in order to save information, like a cookie and then access it later on. If you go to Chrome's dev tools (F12)
- * and look at the Application tab, you should be able to find this value - try it!
- * However, this isn't where I was going with this. It's technically possible to use this to pass information between pages, but it's a bit of an overkill.
- * Try searching Google for query strings and how to work with them. Let me know if you have any other questions.
- *// -->
+<div>
+  <script type="text/javascript" class="viewUrlIndexPage">
+   var viewFinder = document.URL.split("?")[1]
+  </script>
+</div>
 
 
 

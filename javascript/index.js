@@ -17,7 +17,7 @@ var queryParam = url.split("?")[2];
 var songNameFromUrl = queryParam.split("=")[1];
 var songNameUrlString = songNameFromUrl.replaceAll("%20", " ");
 var lyricsFromArray = null;
-var songNameFromUrl = url.split("=")[2]; 
+
 
 for (var i = 0; i < arrayLength; i++) {
     if (songs[i].title === songNameUrlString){
@@ -31,7 +31,7 @@ for (var i = 0; i < arrayLength; i++) {
 
         console.log(document.URL.split("?")[1]);
 
-    //console.log(document.URL.split("?")[1].replaceAll("%20", " ")); ---- logs for song pages with "-"
+   
   
 
     
