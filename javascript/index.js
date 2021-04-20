@@ -32,8 +32,12 @@ for (var i = 0; i < arrayLength; i++) {
         console.log(document.URL.split("?")[1]);
 
    
-  
-
+  var viewHome = document.URL("?")[1];
+  var viewSongs = document.URL("?")[2];
+  var viewSingleSong = document.URL("?")[3];
+    
+    
+    
     
     
     
