@@ -87,7 +87,7 @@ body {
 .middle-head {
   position: relative ;
   bottom: 149px;
-  left: ;
+  /* left: ; */
   text-align: center;
   font-size: 64px;
   font-family: 'Metallica';
@@ -202,6 +202,10 @@ color: white;
 
 /* url view test ... */
 
-.viewUrlIndexPage {
+.hideHtmlElement {
   display: none;
+}
+
+#viewHome {
+  
 }
