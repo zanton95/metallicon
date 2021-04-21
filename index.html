@@ -10,68 +10,94 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body id="index-page">
-
-<div class="web-container">
-  
-  <div class="topnav">
-    <a class="home" href="file:///C:/code/metallicon/index.html?view=home?view=songs?view=single-song">Home</a>
-    <a class="songs" href="file:///C:/code/metallicon/songs.html?view=songs">Songs</a>
-    <input class="search-bar" type="text" placeholder="">
-    <i class="fa fa-search" aria-hidden="true"></i>
-  </div>
-  <!-- חלנלחנלחילחיל -->
-  <div class="hideHtmlElement">   
-<!-- גכדגכדגכגכגדכ -->
-  <div  class="img-container" >
-    <img src="img/landing.jfiff.jfif" alt="Cheering fans" class="main-img">
-  </div>
-  
-  
-  <div>
-     <h1 class="top-left">Enter Sandman..</h1>
-  </div> 
+  <div class="web-container">
     
+    <div class="topnav">
+      <a class="home" href="index.html?view=home">Home</a>
+      <a class="songs" href="index.html?view=songs">Songs</a>
+      <input class="search-bar" type="text" placeholder="">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+    
+
+    </div>
+  <span class="VisibleHtmlElement"></span>
+   <!-- Home page -->
+
+
+ <div id="viewHome" class="hideHtmlElement"  style="display: none;">
+   <script type="text/javascript">
+    var viewHome = document.URL("?")[1];
+  </script>
+
+ <div  class="img-container" >
+   <img src="img/landing.jfiff.jfif" alt="Cheering fans" class="main-img">
+ </div>
+
+ <div>
+    <h1 class="top-left">Enter Sandman..</h1>
+ </div> 
+  
   <div><h1 class="middle-head">Welcome to Metallicon</h1></div>
   <div><p class="middle-paragraph">Home to the fans of the legendary band - Metallica.</p></div>
   <div> <p class="bottom-paragraph">Enter Sandman..</p> </div>
-     
-<div class="video-container">
-  <div>
-         <iframe width="700" height="394" src="https://www.youtube.com/embed/87by1DjfxLw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
-  </div>
-</div>
-  
-  <div class="icon-bar">
-    Metallica @
-  <a href="https://www.facebook.com/Metallica/" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-  <a href="https://twitter.com/Metallica" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-  <a href="https://www.instagram.com/metallica/" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-    </div>
    
+ <div class="video-container">
+  <div>
+       <iframe width="700" height="394" src="https://www.youtube.com/embed/87by1DjfxLw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
+  </div>
+  </div>
+
 </div>
 
-<div id="viewHome">
-  <script type="text/javascript">
-   var viewHome = document.URL("?")[1];
-  </script>
-</div>
+  <!-- Songs page -->
 
-<div  id="viewSongs">
+<div  id="viewSongs" class="hideHtmlElement" style="display: none;"> 
   <script type="text/javascript">
    var viewSongs = document.URL("?")[2];
   </script>
+
+<div class="songs-title-container">
+  <h1 class="songs-title">Metallicon Songs</h1>
+</div>
+  
+  
+<div class="songs-list-container">
+    <ul class="songs-list">
+    <li><a class="song-link" href="index.html?view=single-song?name=Nothing Else Matters">&emsp; Nothing Else Matters</a> </li>
+    <hr>
+    <li><a class="song-link" href="index.html?view=single-song?name=Enter Sandman">&emsp; Enter Sandman</a> </li>
+    <hr>
+    <li><a class="song-link" href="index.html?view=single-song?name=The Unforgiven II">&emsp; The Unforgiven II</a> </li>
+  </ul>
 </div>
 
-<div  id="viewSingleSong">
-  <script type="text/javascript">
-   var viewSingleSong = document.URL("?")[3];
-  </script>
+</div>
+
+  <!-- Single Song Page -->
+
+  <div  id="viewSingleSong"  class="hideHtmlElement" style="display: none;">
+   <script type="text/javascript">
+    var viewSingleSong = document.URL("?")[3];
+    </script>
+  
+  <div><h1 id="songs-titles">Title</h1></div>
+  <div>
+  <p id="lyrics">Lyrics</p>
+      </div>
+
+
 </div>
 
 
 </div>
 
-
+<div class="icon-bar">
+  Metallica @
+<a href="https://www.facebook.com/Metallica/" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+<a href="https://twitter.com/Metallica" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+<a href="https://www.instagram.com/metallica/" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+  </div>
 
 </body>
 </html>

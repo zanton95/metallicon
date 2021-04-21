@@ -202,10 +202,14 @@ color: white;
 
 /* url view test ... */
 
-.hideHtmlElement {
-  display: none;
+/* .hideHtmlElement {
+  visibility: hidden;
+}
+
+.VisibleHtmlElement {
+  visibility: visible;
 }
 
 #viewHome {
   
-}
+} */
