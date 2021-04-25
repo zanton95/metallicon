@@ -35,7 +35,9 @@ for (var i = 0; i < arrayLength; i++) {
         // document.getElementById().style.display = "none";
         // document.getElementById(viewHome).style.visibility = "visible";
         
-    
+    if (document.URL.split("=")[1] === "home") {
+       
+    }
     
     
     
