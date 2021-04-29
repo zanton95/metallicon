@@ -201,15 +201,15 @@ color: white;
 
 
 /* url view test ... */
-.VisibleHtmlElement {
-  display: block;
-  color: red;
-}
+
 
 .hideHtmlElement {
   display: none;
 }
 
+.VisibleHtmlElement {
+  display: block !important;
+}
 
 
 /* #viewSingleSong {

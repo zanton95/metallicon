@@ -33,16 +33,14 @@ for (var i = 0; i < arrayLength; i++) {
 
         
       
-        function addingPages () {
-        var homePageView = document.getElementById("viewHome");
+        // function addingPages () {
+        // var homePageView = document.getElementById("viewHome");
 
-        if (document.URL.split("=")[1] === "home") {
-            homePageView.classList.add("VisibleHtmlElement");
-            
-        }
-    
+        // if (document.URL.split("=")[1] === "home") {
+        //     homePageView.classList.add("VisibleHtmlElement");
 
-       }
+        //      } 
+        //     }
        
         
     
