@@ -32,21 +32,21 @@ for (var i = 0; i < arrayLength; i++) {
         console.log(document.URL.split("?")[1]);
 
         
-        // document.getElementById().style.display = "none";
-        // document.getElementById(viewHome).style.visibility = "visible";
-        
-   
-    
-        // document.getElementById("viewSongs").style.display = "block";
-        
-    
+      
+        function addingPages () {
+        var homePageView = document.getElementById("viewHome");
+
         if (document.URL.split("=")[1] === "home") {
-            document.getElementById("viewHome").display = "block";
+            homePageView.classList.add("VisibleHtmlElement");
+            
+        }
     
 
-    }
-    
-    
+       }
+       
+        
     
     
 
+
+    //    homePageView.classList.add("VisibleHtmlElement");
