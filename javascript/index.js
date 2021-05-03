@@ -29,22 +29,26 @@ for (var i = 0; i < arrayLength; i++) {
 }
 
 
-        console.log(document.URL.split("?")[1]);
+       
 
         
       
-        // function addingPages () {
-        // var homePageView = document.getElementById("viewHome");
+window.onload = function pageLoaded() {
+      
+    if (document.URL.split("=")[1] === "home") {
+        var viewHome =  document.getElementById("viewHome")
+        viewHome.classList.add("VisibleHtmlElement");
 
-        // if (document.URL.split("=")[1] === "home") {
-        //     homePageView.classList.add("VisibleHtmlElement");
+        } else if (document.URL.split("=")[1] === "songs") {
+            var viewSongs = document.getElementById("viewSongs")
+            viewSongs.classList.add("VisibleHtmlElement")
 
-        //      } 
-        //     }
+        } else if (document.URL.split("=")[1] === "single-song?name") {
+            var singleSong = document.getElementById("viewSingleSong")
+            singleSong.classList.add("VisibleHtmlElement")
+
+        }
+    
+    }
        
-        
-    
-    
-
-
-    //    homePageView.classList.add("VisibleHtmlElement");
+          console.log(document.URL.split("=")[1])

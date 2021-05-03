@@ -208,7 +208,7 @@ color: white;
 }
 
 .VisibleHtmlElement {
-  display: block !important;
+  display: block;
 }
 
 
