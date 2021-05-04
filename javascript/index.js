@@ -14,18 +14,23 @@ function getFileName (url) {
 function nameAndLyrics () {
         var url = document.URL;
         var arrayLength = songs.length;
+    if (document.URL.split("=")[1] === "single-song?name"){
         var queryParam = url.split("?")[2];
         var songNameFromUrl = queryParam.split("=")[1];
         var songNameUrlString = songNameFromUrl.replaceAll("%20", " ");
-        var lyricsFromArray = null;
+    }
+    var lyricsFromArray = null;
     for (var i = 0; i < arrayLength; i++) {
         if (songs[i].title === songNameUrlString){
             lyricsFromArray = songs[i].lyrics;
     }
-        document.getElementById("songs-titles").innerHTML = songNameUrlString;
-        document.getElementById("lyrics").innerHTML = lyricsFromArray;
-        }
+    document.getElementById("songs-titles").innerHTML = songNameUrlString;
+    document.getElementById("lyrics").innerHTML = lyricsFromArray;
+    }
 }
+
+       
+        
 
 document.addEventListener("DOMContentLoaded", pageLoaded);
       
