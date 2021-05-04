@@ -55,9 +55,9 @@ for (var i = 0; i < arrayLength; i++) {
 
        
 
-        
+document.addEventListener("DOMContentLoaded", pageLoaded);
       
-window.onload = function pageLoaded() {
+function pageLoaded() {
       
     if (document.URL.split("=")[1] === "home") {
         var viewHome =  document.getElementById("viewHome")
@@ -71,8 +71,11 @@ window.onload = function pageLoaded() {
             var singleSong = document.getElementById("viewSingleSong")
             singleSong.classList.add("VisibleHtmlElement")
 
+        } else {
+            var viewHome =  document.getElementById("viewHome")
+            viewHome.classList.add("VisibleHtmlElement");
         }
     
     }
        
-          console.log(document.URL.split("=")[1])
+         
