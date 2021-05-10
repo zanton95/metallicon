@@ -58,10 +58,11 @@ body {
 
 .topnav i {
   position: relative;
-  float: right;
-  bottom: 11px;
-  color:#9e9c9c;
-  font-size: 17px;
+    float: right;
+    bottom: 5px;
+    color: #9e9c9c;
+    font-size: 17px;
+    left: 130px;
 }
 .img-container {
   overflow-x: hidden;
