@@ -50,9 +50,15 @@ function pageLoaded () {
     }
 }
 
-       
+  
 
-      
+
+function pressEnter(event) {
+  var x = event.keyCode;
+  if (x == 13) {  
+    alert ("You pressed the Enter key!");
+  }
+}
 
 
 
