@@ -58,7 +58,7 @@ function pressEnter(e)
 { 
    var inputId = document.getElementById("search-bar-press") 
    var keyCode = (window.event) ? e.which : e.keyCode;
-   if (inputId && inputId.value && keyCode == 13)
+   if (inputId.value && keyCode == 13)
    alert ("You pressed the Enter key!");
 }
 
