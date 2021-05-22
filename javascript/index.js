@@ -1,4 +1,11 @@
 
+/**
+ * Lev general notes:
+ *  - Put all the event listener registrations together so it's more clear what events you're listening too (all at the start of the code)
+ *  - Do not add two different event listeners for the same event. You currently have two for the DOMContentLoaded. It's better that you control
+ *    exactly the order of what happens when an event occurs rather than add more and more listeners. You can have one function that calls the others if need be.
+ */
+
 document.addEventListener("DOMContentLoaded", nameAndLyrics);
 
 var songs = [
@@ -55,9 +62,54 @@ function pageLoaded () {
 document.addEventListener('keypress', pressEnter );
   
 function pressEnter(e)
-{ 
+{
+    /**
+     * Lev note:
+     * Notice that you called the vaiable inputId, but it actually returns the element (that you get by the element id) 
+     * so it is actually the element object that you have here. I'd call it inputbox or searchBarInputBox.
+     * Since this is an element, how do you get the actual input that the user wrote from that element? I see that inputbox.value works.
+     */
    var inputId = document.getElementById("search-bar-press") 
+
+   /**
+    * Ok so you have the event that happened, in this case it's the variable that you called 'e'.
+    * (when you decided what to call the first variable in the funtion, we can go over this together later on if that's not clear enough)
+    * What you need to check at this point is whether the event was a keypress of the enter key or not. This line is a short way of doing an if, 
+    * you can research it yourself and we'll also look at this together later on - but you can comment it out and just use a regular if.
+    * It looks like some browsers will use e.which and others e.keyCode, that's why it's checking that here. 
+    * Anyways, you have the key code at this point so if you prefer we sit to look at this together leave this line as is.
+    */
    var keyCode = (window.event) ? e.which : e.keyCode;
+
+   /**
+    * First of all when you write an if without the {} it will execute only the next line. It's not very clear so please always use the {}, like this:
+    * 
+    * if (something) {
+    *   your code here..
+    * }
+    * 
+    * 
+    * Now try to take your time and slowly look at this code and understand what it does. The if statement itself just wants to know whether what's 
+    * inside is true or false right? This is how it knows whether to execute the code of the if or ignore it. Also don't forget that when it gets 
+    * something that isn't a boolean value, it will try to convert it to a boolean value. 
+    * 1 will become true, 0 will become false and ANY string will become true, even a whitespace.
+    * 
+    * When we want to check more than one thing in the if statement, we use the '&&' operator. This way the if statement fist looks at the first part,
+    * if the first part is false it will not check the other part because it knows that you want BOTH to be true and one already isn't. 
+    * If the first part is true (or can be converted to true) it will then check the second part. If both are true it will execute the code 
+    * inside the if statement.
+    * 
+    * Look at the if statement. It first checks whether inputId.value is 'true'. the inputId.value will return the text that the user entered right?
+    * (again, the name of the variable is a little confusing, but this is the element of the input we're looking at here)
+    * But the value there isn't true or false, it is a string. In our case it's a string of a white space: ' '. If this is a string and the if wants a boolean,
+    * what will it convert it to? It will become 'true' and then the if will go on to check the second part. The second part checks whether the keyCode variable's value
+    * is equal to 13. If it is the code inside the if will be executed (the alert in this case)
+    * So basically what this if statement does in human words is: 
+    * If we have ANY sort of text in the input AND the code for the key that was pressed is 13, show and alert.
+    * 
+    * 
+    * If this explanation is not clear enough, don't worry - we'll talk about it on the phone together!
+    */
    if (inputId.value && keyCode == 13)
    alert ("You pressed the Enter key!");
 }
