@@ -52,15 +52,14 @@ function pageLoaded () {
 
   
 
-
-function pressEnter(event) {
-  var x = event.keyCode;
-  if (x == 13) {  
-    alert ("You pressed the Enter key!");
-  }
+document.addEventListener('keypress', pressEnter );
+  
+function pressEnter(e)
+{ 
+   var inputId = document.getElementById("search-bar-press") 
+   var keyCode = (window.event) ? e.which : e.keyCode;
+   if (inputId && inputId.value && keyCode == 13)
+   alert ("You pressed the Enter key!");
 }
 
-
-
        
-         
