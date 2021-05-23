@@ -1,5 +1,14 @@
 
+/**
+ * Lev general notes:
+ *  - Put all the event listener registrations together so it's more clear what events you're listening too (all at the start of the code)
+ *  - Do not add two different event listeners for the same event. You currently have two for the DOMContentLoaded. It's better that you control
+ *    exactly the order of what happens when an event occurs rather than add more and more listeners. You can have one function that calls the others if need be.
+ */
+
 document.addEventListener("DOMContentLoaded", nameAndLyrics);
+document.addEventListener("DOMContentLoaded", pageLoaded);
+document.addEventListener('keypress', pressEnter );
 
 var songs = [
     {title:"Nothing Else Matters", lyrics:"So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> And nothing else matters <br> <br> Never opened myself this way <br> Life is ours, we live it our way <br> All these words I don't just say <br> And nothing else matters <br> <br> Trust I seek and I find in you <br> Every day for us something new <br> Open mind for a different view <br> And nothing else matters <br> <br> Never cared for what they do <br> Never cared for what they know <br> But I know <br> <br> So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> And nothing else matters <br> <br> Never cared for what they do <br> Never cared for what they know <br> But I know <br> <br> I never opened myself this way <br> Life is ours, we live it our way <br> All these words I don't just say <br> And nothing else matters <br> <br> Trust I seek and I find in you <br> Every day for us, something new <br> Open mind for a different view <br> And nothing else matters <br> <br> Never cared for what they say <br> Never cared for games they play <br> Never cared for what they do <br> Never cared for what they know <br> And I know, yeah! <br> <br> So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> No, nothing else matters <br>" },
@@ -32,7 +41,6 @@ function nameAndLyrics () {
        
         
 
-document.addEventListener("DOMContentLoaded", pageLoaded);
       
 function pageLoaded () {
     if (document.URL.split("=")[1] === "home") {
@@ -52,15 +60,13 @@ function pageLoaded () {
 
   
 
-document.addEventListener('keypress', pressEnter );
   
 function pressEnter(e)
-{ 
-   var inputId = document.getElementById("search-bar-press") 
-   var keyCode = (window.event) ? e.which : e.keyCode;
-   if (inputId.value && keyCode == 13){
-       alert ("You pressed the Enter key!");
-    }
-} 
+{
+        var searchBarInputBox = document.getElementById("search-bar-press") 
+        var keyCode = (window.event) ? e.which : e.keyCode;
+    if (searchBarInputBox.value && keyCode == 13){
+   
+   } 
 
-       
+} 
