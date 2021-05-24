@@ -61,12 +61,12 @@ function pageLoaded () {
   
 
   
-function pressEnter(e)
-{
-        var searchBarInputBox = document.getElementById("search-bar-press") 
+function pressEnter(e){
+        var queryParamQ = document.URL.split("=")[2];
+        var searchBarInputBox = document.getElementById("search-bar-press"); 
         var keyCode = (window.event) ? e.which : e.keyCode;
     if (searchBarInputBox.value && keyCode == 13){
-   
+        queryParamQ = searchBarInputBox.value
    } 
 
 } 
