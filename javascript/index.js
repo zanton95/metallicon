@@ -69,3 +69,42 @@ function pressEnter(e){
    } 
 
 } 
+
+
+// function pressEnter(event) {
+//     if (event.keyCode !== 13) {
+//         // Return is a special keyword. It tells JS to stop running the current function 
+//         // (pressEnter in this case)
+//         return;
+//     }
+
+//     // The rest will only run if the keyCode is 13.
+//     var inputElement = document.getElementById('search-bar-press');
+//     var searchText = inputElement.value;
+
+//     // Lev & Anton together:
+//     // At this point, we know to check if Enter was pressed. 
+//     // We then take the text from the input and alert it.
+//     // Since we only want to alert if we didn't get an empty value, we need to add an if.
+//     // The if should check if the string we got isn't an empty string AND isn't just white spaces.
+//     // Hint: you can start with just checking for the empty string and then for both
+//     // the empty string and the white spaces.
+
+//     alert(searchText);
+
+//     // sayMyName('Anton', 'Zimin');
+//     // alert('function was called.');
+
+//     // var searchBarInputBox = document.getElementById("search-bar-press")
+//     // var keyCode = (window.event) ? e.which : e.keyCode;
+
+//     // if (searchBarInputBox.value && keyCode == 13) {
+
+//     // }
+
+// } 
+
+// function sayMyName (name, lastName) {
+//     var fullName = name + ' ' + lastName;
+//     alert(fullName);
+// }
