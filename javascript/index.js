@@ -62,11 +62,10 @@ function pageLoaded () {
 
   
 function pressEnter(e){
-        var queryParamQ = document.URL.split("=")[2];
-        var searchBarInputBox = document.getElementById("search-bar-press"); 
+       var searchBarInputBox = document.getElementById("search-bar-press"); 
         var keyCode = (window.event) ? e.which : e.keyCode;
-    if (searchBarInputBox.value && keyCode == 13){
-        queryParamQ = searchBarInputBox.value
+    if (searchBarInputBox.value && keyCode == 13 && searchBarInputBox.value.trim()){
+        alert(searchBarInputBox.value)
    } 
 
 } 
