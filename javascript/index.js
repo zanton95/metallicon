@@ -43,10 +43,10 @@ function nameAndLyrics () {
 
       
 function pageLoaded () {
-    if (document.URL.split("=")[1] === "home") {
+    if (document.URL.split("=")[1] === "home?q") {
         var viewHome =  document.getElementById("viewHome")
         viewHome.classList.add("VisibleHtmlElement");
-    } else if (document.URL.split("=")[1] === "songs") {
+    } else if (document.URL.split("=")[1] === "songs?q") {
             var viewSongs = document.getElementById("viewSongs")
             viewSongs.classList.add("VisibleHtmlElement")
     } else if (document.URL.split("=")[1] === "single-song?name") {
@@ -60,15 +60,54 @@ function pageLoaded () {
 
   
 
-  
 function pressEnter(e){
-       var searchBarInputBox = document.getElementById("search-bar-press"); 
-        var keyCode = (window.event) ? e.which : e.keyCode;
+    var searchBarInputBox = document.getElementById("search-bar-press"); 
+    var keyCode = (window.event) ? e.which : e.keyCode;
     if (searchBarInputBox.value && keyCode == 13 && searchBarInputBox.value.trim()){
-        alert(searchBarInputBox.value)
-   } 
+        // var queryParams = new URLSearchParams(window.location.search);
+        // queryParams.set("home?q", "songs?q");
+        // history.pushState(null, null, "?"+queryParams.toString());
+    } 
 
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function pressEnter(event) {
