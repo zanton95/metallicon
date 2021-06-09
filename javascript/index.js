@@ -16,9 +16,9 @@ var songs = [
     {title:"The Unforgiven II", lyrics:"Lay beside me and tell me what they've done <br> And speak the words I wanna hear to make my demons run <br> The door is locked now but it's open if you're true <br> If you can understand the me then I can understand the you <br> <br> Lay beside me, under wicked sky <br> Through black of day, dark of night, we share this, paralyzed <br> The door cracks open but there's no sun shining through <br> Black heart scarring darker still but there's no sun shining through <br> No there's no sun shining through, no there's no sun shining <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Come lay beside me, this won't hurt I swear <br> She loves me not, she loves me still but she'll never love again <br> She lay beside me but she'll be there when I'm gone <br> Black hearts scarring darker still, yes she'll be there when I'm gone <br> Yes she'll be there when I'm gone, dead sure she'll be there? <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Lay beside me, tell me what I've done <br> The door is closed so are your eyes <br> But now I see the sun, now I see the sun <br> <br> Yes now I see it <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you <br> <br> Yeah, what I've felt, what I've known <br> So sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits <br> The one who waits for you <br> <br> Oh, what I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? (so I dub thee unforgiven) <br> <br> Oh, what I've felt <br> Oh, what I've known <br> I'll take this key and I'll bury it in you <br> Because you're unforgiven too <br> <br> Never free, never me <br> 'Cause you're unforgiven too, oh oh" },
 ];
 
-function getFileName (url) {
-    return url.split("/").pop();
-}
+// function getFileName (url) {
+//     return url.split("/").pop();
+// }
 
 function nameAndLyrics () {
         var url = document.URL;
@@ -63,10 +63,13 @@ function pageLoaded () {
 function pressEnter(e){
     var searchBarInputBox = document.getElementById("search-bar-press"); 
     var keyCode = (window.event) ? e.which : e.keyCode;
+    var myUrl = new URL(window.location.href);
     if (searchBarInputBox.value && keyCode == 13 && searchBarInputBox.value.trim()){
-        // var queryParams = new URLSearchParams(window.location.search);
-        // queryParams.set("home?q", "songs?q");
-        // history.pushState(null, null, "?"+queryParams.toString());
+        myUrl.searchParams.set("view", "songs?q");
+        myUrl.searchParams.set("q", searchBarInputBox.value);
+        myUrl.search = myUrl;
+        // var stringUrlFix = myUrl.replaceAll("%3Fq&", "");
+        console.log(myUrl)
     } 
 
 } 
