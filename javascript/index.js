@@ -61,16 +61,33 @@ function pageLoaded () {
   
 
 function pressEnter(e){
-    var searchBarInputBox = document.getElementById("search-bar-press"); 
+    /**
+    * The flow we want, with alert:
+     *  1. Catch only 'enter' key hits
+     *  2. Get the content of the search from the element
+     *  2. Do nothing if the content is empty (nothing or whitespaces)
+     *  3. Alert the content text.
+     */
+    
+    /**
+    * The flow we want, with URL changes:
+     *  1. Catch only 'enter' key hits
+     *  2. Get the content of the search from the element
+     *  2. Do nothing if the content is empty (nothing or whitespaces)
+     *  3. Change the URL 'view' query param to the name you want to use for the page that
+     *     shows the search results. Let's say the page will be called 'search-results'
+     *  4. Change the URL 'q' query param to the search content (with trim() of course)
+     */
+
     var keyCode = (window.event) ? e.which : e.keyCode;
-    var myUrl = new URL(window.location.href);
-    if (searchBarInputBox.value && keyCode == 13 && searchBarInputBox.value.trim()){
-        myUrl.searchParams.set("view", "songs?q");
-        myUrl.searchParams.set("q", searchBarInputBox.value);
-        myUrl.search = myUrl;
-        // var stringUrlFix = myUrl.replaceAll("%3Fq&", "");
-        console.log(myUrl)
+    var searchBarInputBox = document.getElementById("search-bar-press"); 
+    var searchContent = searchBarInputBox.value.trim();
+
+    if (keyCode === 13 && searchContent) {
+        window.location.href = 'index.html?view=search-results?q=';
     } 
+
+
 
 } 
 
