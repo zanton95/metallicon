@@ -43,15 +43,19 @@ function nameAndLyrics () {
 
       
 function pageLoaded () {
-    if (document.URL.split("=")[1] === "home?q") {
+    if (document.URL.split("=")[1] === "home") {
         var viewHome =  document.getElementById("viewHome")
         viewHome.classList.add("VisibleHtmlElement");
-    } else if (document.URL.split("=")[1] === "songs?q") {
+    } else if (document.URL.split("=")[1] === "songs") {
             var viewSongs = document.getElementById("viewSongs")
             viewSongs.classList.add("VisibleHtmlElement")
     } else if (document.URL.split("=")[1] === "single-song?name") {
     var singleSong = document.getElementById("viewSingleSong")
     singleSong.classList.add("VisibleHtmlElement")
+    } else if (document.URL.split("=")[1] === "search-results?p") {
+        
+
+
     } else {
         var viewHome =  document.getElementById("viewHome")
         viewHome.classList.add("VisibleHtmlElement");
@@ -61,30 +65,13 @@ function pageLoaded () {
   
 
 function pressEnter(e){
-    /**
-    * The flow we want, with alert:
-     *  1. Catch only 'enter' key hits
-     *  2. Get the content of the search from the element
-     *  2. Do nothing if the content is empty (nothing or whitespaces)
-     *  3. Alert the content text.
-     */
-    
-    /**
-    * The flow we want, with URL changes:
-     *  1. Catch only 'enter' key hits
-     *  2. Get the content of the search from the element
-     *  2. Do nothing if the content is empty (nothing or whitespaces)
-     *  3. Change the URL 'view' query param to the name you want to use for the page that
-     *     shows the search results. Let's say the page will be called 'search-results'
-     *  4. Change the URL 'q' query param to the search content (with trim() of course)
-     */
-
     var keyCode = (window.event) ? e.which : e.keyCode;
     var searchBarInputBox = document.getElementById("search-bar-press"); 
     var searchContent = searchBarInputBox.value.trim();
-
+    
     if (keyCode === 13 && searchContent) {
-        window.location.href = 'index.html?view=search-results?q=';
+        window.location.href = 'index.html?view=search-results?p=' + searchBarInputBox.value.trim();
+       
     } 
 
 
