@@ -52,10 +52,6 @@ function pageLoaded () {
     } else if (document.URL.split("=")[1] === "single-song?name") {
     var singleSong = document.getElementById("viewSingleSong")
     singleSong.classList.add("VisibleHtmlElement")
-    } else if (document.URL.split("=")[1] === "search-results?p") {
-        
-
-
     } else {
         var viewHome =  document.getElementById("viewHome")
         viewHome.classList.add("VisibleHtmlElement");
@@ -78,7 +74,18 @@ function pressEnter(e){
 
 } 
 
+// function ifSongMatchesSearchContent () {
+//     var arrayLength = songs.length;
+//     if (document.URL.split("=")[1] === "search-results?p") {
+//         for (var i = 0; i < arrayLength; i++) {
+//             if (){
+                
+//         }
 
+
+//     } 
+
+// } 
 
 
 
