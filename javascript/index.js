@@ -53,15 +53,28 @@ function pageLoaded () {
     var singleSong = document.getElementById("viewSingleSong")
     singleSong.classList.add("VisibleHtmlElement")
     } else if (document.URL.split("=")[1] === "search-results?p") {
+        /**
+         * TODO flow:
+         *  - Take the query text from the url: this is the song name we're looking for.
+         *    - Note: let's start with just looking at EXACTLY that name, and improve the search later on
+         *  - Go over your song list and find a song with that name
+         *  - Alert the found song
+         */
         
- 
- 
+         /**
+          * Side quest:
+          *  - Look at each of the ifs in this function.
+          *  - For each of them you're getting an element by id, then adding a class.
+          *  - Can we create a function that would do this? It can take the name of the elemnt to find as
+          *    a parameter and than it will add the class.
+          *  - Don't forget that we have examples on 'js-practice' branch
+          */
+
      } else {
         var viewHome =  document.getElementById("viewHome")
         viewHome.classList.add("VisibleHtmlElement");
     }
 }
-
   
 
 function pressEnter(e){
