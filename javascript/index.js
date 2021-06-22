@@ -53,19 +53,17 @@ function pageLoaded () {
     var singleSong = document.getElementById("viewSingleSong")
     singleSong.classList.add("VisibleHtmlElement")
     } else if (document.URL.split("=")[1] === "search-results?p") {
-<<<<<<< HEAD
-        songs.title === document.getElementById("search-bar-press");
- 
- 
-=======
-        /**
+        
+       /**
          * TODO flow:
          *  - Take the query text from the url: this is the song name we're looking for.
          *    - Note: let's start with just looking at EXACTLY that name, and improve the search later on
          *  - Go over your song list and find a song with that name
          *  - Alert the found song
          */
-        
+
+
+
          /**
           * Side quest:
           *  - Look at each of the ifs in this function.
@@ -75,12 +73,13 @@ function pageLoaded () {
           *  - Don't forget that we have examples on 'js-practice' branch
           */
 
->>>>>>> f286fafc51adf836ea3933d90ca6083bb617f8c9
+ 
      } else {
         var viewHome =  document.getElementById("viewHome")
         viewHome.classList.add("VisibleHtmlElement");
     }
 }
+
   
 
 function pressEnter(e){
@@ -97,16 +96,13 @@ function pressEnter(e){
 
 } 
 
+// function ifSongMatchesSearchContent () {
+//     while ( pressEnter) {
+//         console.log("worked")
+//     }
+    
 
-
-
-function ifSongMatchesSearchContent () {
-   if (songs.title === document.getElementById("search-bar-press")){
-    alert("success");
-
-
-   }
-} 
+// } 
 
 
 
