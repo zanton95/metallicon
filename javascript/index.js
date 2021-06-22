@@ -53,7 +53,7 @@ function pageLoaded () {
     var singleSong = document.getElementById("viewSingleSong")
     singleSong.classList.add("VisibleHtmlElement")
     } else if (document.URL.split("=")[1] === "search-results?p") {
-        
+        songs.title === document.getElementById("search-bar-press");
  
  
      } else {
@@ -78,13 +78,16 @@ function pressEnter(e){
 
 } 
 
-// function ifSongMatchesSearchContent () {
-//     while ( pressEnter) {
-//         console.log("worked")
-//     }
-    
 
-// } 
+
+
+function ifSongMatchesSearchContent () {
+   if (songs.title === document.getElementById("search-bar-press")){
+    alert("success");
+
+
+   }
+} 
 
 
 
