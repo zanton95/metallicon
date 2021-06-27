@@ -57,7 +57,7 @@ function pageLoaded () {
        /**
          * TODO flow:
          *  - Take the query text from the url: this is the song name we're looking for.
-         *    - Note: let's start with just looking at EXACTLY that name, and improve the search later on
+         *  - Note: let's start with just looking at EXACTLY that name, and improve the search later on
          *  - Go over your song list and find a song with that name
          *  - Alert the found song
          */
@@ -89,20 +89,25 @@ function pressEnter(e){
     
     if (keyCode === 13 && searchContent) {
         window.location.href = 'index.html?view=search-results?p=' + searchContent;
-       
     } 
-
-
-
-} 
-
-// function ifSongMatchesSearchContent () {
-//     while ( pressEnter) {
-//         console.log("worked")
-//     }
     
+}
 
-// } 
+function takingQueryFromUrl() {
+    // var url = window.location.href;
+    var queryLocationInUrl = window.location.href.split("=").pop();
+    
+    if (window.location.href.split("=").pop() === "Nothing%20Else%20Matters") {
+        console.log(window.location.href.split("=").pop());
+    }
+}
+
+// console.log(window.location.href.split("=").pop());
+
+
+
+
+
 
 
 
