@@ -61,9 +61,13 @@ function pageLoaded () {
          *  - Note: let's start with just looking at EXACTLY that name, and improve the search later on
          *  - Go over your song list and find a song with that name
          *  - Alert the found song
+         *  - instead of logging name of song lets add it to a new array called matchedSongs( empty array and add found songs to it)
+         *  - lets implement a better search: 
+         *  - if input text enter sandman is all upper or lower case it should still find songs( search should ignore lower and uppercase letters)
+         *  - now lets match songs even if the user didn't write the full name in other words if a song name contains the input text anywhere in the text then it's a match  
          */
 
-
+           // ----- remind lev jquery ------ 
 
          /**
           * Side quest:
