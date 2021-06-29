@@ -8,6 +8,7 @@
 
 document.addEventListener("DOMContentLoaded", nameAndLyrics);
 document.addEventListener("DOMContentLoaded", pageLoaded);
+document.addEventListener("DOMContentLoaded", takingQueryFromUrl);
 document.addEventListener('keypress', pressEnter );
 
 var songs = [
@@ -93,18 +94,14 @@ function pressEnter(e){
     
 }
 
-/**
- * Lev note:
- *  - You've got the function declared (written) here and it's good. But when will it be called?
- *    Don't forget that when you write a function, it just 'exists', it won't run on it's own.
- *  - Think of where in your code you want to call the function by using (), like this: takingQueryFromUrl()
- */
+
 function takingQueryFromUrl() {
     // var url = window.location.href;
     var queryLocationInUrl = window.location.href.split("=").pop();
     
-    if (window.location.href.split("=").pop() === "Nothing%20Else%20Matters") {
-        console.log(window.location.href.split("=").pop());
+    if (queryLocationInUrl === "Nothing%20Else%20Matters") {
+        alert("works");
+        
     }
 }
 
