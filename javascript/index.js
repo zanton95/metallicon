@@ -97,11 +97,16 @@ function pressEnter(e){
 
 function takingQueryFromUrl() {
     // var url = window.location.href;
+    var arrayLength = songs.length;
     var queryLocationInUrl = window.location.href.split("=").pop();
-    
-    if (queryLocationInUrl === "Nothing%20Else%20Matters") {
-        alert("works");
-        
+    var searchBarInputBox = document.getElementById("search-bar-press"); 
+
+    for(var i = 0; i < arrayLength; i++){
+
+        if (queryLocationInUrl === "Nothing%20Else%20Matters") {
+            alert("works");
+            console.log(window.location.href.split("=").pop());
+        }
     }
 }
 
@@ -111,7 +116,10 @@ function takingQueryFromUrl() {
 
 
 
+// if (queryLocationInUrl === "Nothing%20Else%20Matters") {
+//     alert("works");
 
+// }
 
 
 
