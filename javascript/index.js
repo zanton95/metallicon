@@ -103,18 +103,25 @@ function takingQueryFromUrl() {
     // var url = window.location.href;
     var arrayLength = songs.length;
     var queryLocationInUrl = window.location.href.split("=").pop();
-    var searchBarInputBox = document.getElementById("search-bar-press"); 
-
+    var songNameUrlString = queryLocationInUrl.replaceAll("%20", " ")
+    var makeLowerCase = songNameUrlString.toLowerCase()
     for(var i = 0; i < arrayLength; i++){
 
-        if (queryLocationInUrl === "Nothing%20Else%20Matters") {
-            alert("works");
-            console.log(window.location.href.split("=").pop());
+        if (makeLowerCase.toLowerCase() === songs[0].title.toLowerCase()) {
+            console.log(makeLowerCase);
+        
+        } else if (makeLowerCase.toLowerCase() === songs[1].title.toLowerCase()) {
+            console.log(makeLowerCase);
+        
+        } else if (makeLowerCase.toLowerCase() === songs[2].title.toLowerCase()) {
+            console.log(makeLowerCase);
         }
     }
 }
+       
 
-// console.log(window.location.href.split("=").pop());
+var matchedSongs = [];
+
 
 
 
