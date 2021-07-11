@@ -98,29 +98,25 @@ function pressEnter(e){
     
 }
 
+var searchResults = [];
 
 function takingQueryFromUrl() {
     // var url = window.location.href;
-    var arrayLength = songs.length;
+    var songsArrayLength = songs.length;
     var queryLocationInUrl = window.location.href.split("=").pop();
     var songNameUrlString = queryLocationInUrl.replaceAll("%20", " ")
     var makeLowerCase = songNameUrlString.toLowerCase()
-    for(var i = 0; i < arrayLength; i++){
-
-        if (makeLowerCase.toLowerCase() === songs[0].title.toLowerCase()) {
-            console.log(makeLowerCase);
-        
-        } else if (makeLowerCase.toLowerCase() === songs[1].title.toLowerCase()) {
-            console.log(makeLowerCase);
-        
-        } else if (makeLowerCase.toLowerCase() === songs[2].title.toLowerCase()) {
-            console.log(makeLowerCase);
+    for(var i = 0; i < songsArrayLength; i++){
+       
+        if (makeLowerCase === songs[i].title.toLowerCase()) {
+            searchResults.push(songs[i]);
+            console.log(searchResults);
         }
     }
 }
        
 
-var matchedSongs = [];
+
 
 
 
