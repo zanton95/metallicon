@@ -8,6 +8,7 @@
 
 document.addEventListener("DOMContentLoaded", nameAndLyrics);
 document.addEventListener("DOMContentLoaded", pageLoaded);
+document.addEventListener("DOMContentLoaded", checkTextInTitle);
 document.addEventListener("DOMContentLoaded", takingQueryFromUrl);
 document.addEventListener('keypress', pressEnter );
 
@@ -100,6 +101,13 @@ function pressEnter(e){
 
 var searchResults = [];
 
+function checkTextInTitle(songs) {
+    return songs.title = document.getElementById("search-bar-press").value;
+  }
+
+
+
+
 function takingQueryFromUrl() {
     // var url = window.location.href;
     var songsArrayLength = songs.length;
@@ -111,6 +119,8 @@ function takingQueryFromUrl() {
         if (makeLowerCase === songs[i].title.toLowerCase()) {
             searchResults.push(songs[i]);
             console.log(searchResults);
+        } else if (makeLowerCase === songs.filter(checkTextInTitle)){
+            alert("asdsad");
         }
     }
 }
