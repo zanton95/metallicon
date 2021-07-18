@@ -8,7 +8,6 @@
 
 document.addEventListener("DOMContentLoaded", nameAndLyrics);
 document.addEventListener("DOMContentLoaded", pageLoaded);
-document.addEventListener("DOMContentLoaded", checkTextInTitle);
 document.addEventListener("DOMContentLoaded", takingQueryFromUrl);
 document.addEventListener('keypress', pressEnter );
 
@@ -99,28 +98,24 @@ function pressEnter(e){
     
 }
 
+
+
+
+
 var searchResults = [];
-
-function checkTextInTitle(songs) {
-    return songs.title = document.getElementById("search-bar-press").value;
-  }
-
-
 
 
 function takingQueryFromUrl() {
-    // var url = window.location.href;
     var songsArrayLength = songs.length;
     var queryLocationInUrl = window.location.href.split("=").pop();
     var songNameUrlString = queryLocationInUrl.replaceAll("%20", " ")
     var makeLowerCase = songNameUrlString.toLowerCase()
+    var textSongsInclude = makeLowerCase.includes("enter");
     for(var i = 0; i < songsArrayLength; i++){
-       
-        if (makeLowerCase === songs[i].title.toLowerCase()) {
+       // problem is that it checks if query has "enter" and for all songs its true ...
+        if (makeLowerCase === songs[i].title.toLowerCase() || textSongsInclude) {
             searchResults.push(songs[i]);
             console.log(searchResults);
-        } else if (makeLowerCase === songs.filter(checkTextInTitle)){
-            alert("asdsad");
         }
     }
 }
