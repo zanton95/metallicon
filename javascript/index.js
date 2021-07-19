@@ -110,10 +110,12 @@ function takingQueryFromUrl() {
     var queryLocationInUrl = window.location.href.split("=").pop();
     var songNameUrlString = queryLocationInUrl.replaceAll("%20", " ")
     var makeLowerCase = songNameUrlString.toLowerCase()
-    var textSongsInclude = makeLowerCase.includes("enter");
+    var textSongsInclude = songs.includes(makeLowerCase);
+    console.log(textSongsInclude);
+   
     for(var i = 0; i < songsArrayLength; i++){
        // problem is that it checks if query has "enter" and for all songs its true ...
-        if (makeLowerCase === songs[i].title.toLowerCase() || textSongsInclude) {
+        if (makeLowerCase === songs[i].title.toLowerCase()) {
             searchResults.push(songs[i]);
             console.log(searchResults);
         }
@@ -123,15 +125,6 @@ function takingQueryFromUrl() {
 
 
 
-
-
-
-
-
-// if (queryLocationInUrl === "Nothing%20Else%20Matters") {
-//     alert("works");
-
-// }
 
 
 
