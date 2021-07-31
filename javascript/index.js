@@ -1,5 +1,5 @@
 
-
+// jquery is in last "else" in pageLoaded function 
 
 document.addEventListener("DOMContentLoaded",() => {
     nameAndLyrics();
@@ -50,21 +50,8 @@ function pageLoaded () {
     singleSong.classList.add("VisibleHtmlElement")
     } else if (document.URL.split("=")[1] === "search-results?p") {
         
-      
-           // ----- remind lev jquery ------ 
 
-         /**
-          * Side quest:
-          *  - Look at each of the ifs in this function.
-          *  - For each of them you're getting an element by id, then adding a class.
-          *  - Can we create a function that would do this? It can take the name of the elemnt to find as
-          *    a parameter and than it will add the class.
-          *  - Don't forget that we have examples on 'js-practice' branch
-          */
 
- // -------------- jquery here ---------------
- //                    |
- //                    v
      } else {
         var viewHome =  $("#viewHome")[0];
         viewHome.classList.add("VisibleHtmlElement");
@@ -104,6 +91,13 @@ function takingQueryFromUrl() {
             searchResults.push(songs[i]);
             console.log(searchResults);
             checkIfSongIsFound = true;
+            var viewSongs =  $("#viewSongs")[0];
+            viewSongs.classList.add("VisibleHtmlElement");
+            document.getElementsByClassName("songs-list")[0].style.visibility = "hidden";
+            document.getElementsByClassName("song-link")[i].style.visibility = "visible";
+           
+            // $("ul.songs-list li:first").hide()
+           
             
         }
     } if (!checkIfSongIsFound) {
@@ -122,7 +116,14 @@ function takingQueryFromUrl() {
 
 
 
-
+ /**
+          * Side quest:
+          *  - Look at each of the ifs in this function.
+          *  - For each of them you're getting an element by id, then adding a class.
+          *  - Can we create a function that would do this? It can take the name of the elemnt to find as
+          *    a parameter and than it will add the class.
+          *  - Don't forget that we have examples on 'js-practice' branch
+          */
 
 
 
