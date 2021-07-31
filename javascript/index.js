@@ -62,9 +62,11 @@ function pageLoaded () {
           *  - Don't forget that we have examples on 'js-practice' branch
           */
 
- 
+ // -------------- jquery here ---------------
+ //                    |
+ //                    v
      } else {
-        var viewHome =  document.getElementById("viewHome")
+        var viewHome =  $("#viewHome")[0];
         viewHome.classList.add("VisibleHtmlElement");
     }
 }
