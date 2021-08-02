@@ -93,18 +93,22 @@ function takingQueryFromUrl() {
             checkIfSongIsFound = true;
             var viewSongs =  $("#viewSongs")[0];
             viewSongs.classList.add("VisibleHtmlElement");
-            document.getElementsByClassName("songs-list")[0].style.visibility = "hidden";
-            document.getElementsByClassName("song-link")[i].style.visibility = "visible";
+            var wholeSongListContainer = $(".songs-list-container");
+            var singleLinkOfSong =  $(".song-link");
+        
+            // wholeSongListContainer[0].classList.add("hideHtmlElement");
+            // singleLinkOfSong[i].classList.add("VisibleHtmlElement");
            
-            // $("ul.songs-list li:first").hide()
-           
+            wholeSongListContainer[0].style.visibility = "hidden";
+            singleLinkOfSong[i].style.visibility = "visible";
             
+            
+            // $("ul.songs-list li:first").hide()
         }
     } if (!checkIfSongIsFound) {
         console.log("No Results");
     }
 }
-       
 
 
 
