@@ -1,4 +1,3 @@
-
 // jquery is in last "else" in pageLoaded function 
 
 document.addEventListener("DOMContentLoaded",() => {
@@ -127,6 +126,31 @@ function takingQueryFromUrl() {
           *    a parameter and than it will add the class.
           *  - Don't forget that we have examples on 'js-practice' branch
           */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
