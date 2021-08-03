@@ -49,8 +49,7 @@ function pageLoaded () {
     var singleSong = document.getElementById("viewSingleSong")
     singleSong.classList.add("VisibleHtmlElement")
     } else if (document.URL.split("=")[1] === "search-results?p") {
-        
-
+       
 
      } else {
         var viewHome =  $("#viewHome")[0];
@@ -93,22 +92,22 @@ function takingQueryFromUrl() {
             checkIfSongIsFound = true;
             var viewSongs =  $("#viewSongs")[0];
             viewSongs.classList.add("VisibleHtmlElement");
-            var wholeSongListContainer = $(".songs-list-container");
-            var singleLinkOfSong =  $(".song-link");
+            var wholeSongListContainer = $("ul li").hide();
+            var singleLinkOfSong =  $("li");
         
-            // wholeSongListContainer[0].classList.add("hideHtmlElement");
-            // singleLinkOfSong[i].classList.add("VisibleHtmlElement");
-           
-            wholeSongListContainer[0].style.visibility = "hidden";
-            singleLinkOfSong[i].style.visibility = "visible";
             
-            
-            // $("ul.songs-list li:first").hide()
+            wholeSongListContainer[0];
+            singleLinkOfSong[i].style.display = "block";
+            console.log(singleLinkOfSong[i])
         }
     } if (!checkIfSongIsFound) {
         console.log("No Results");
     }
 }
+            
+            // wholeSongListContainer[0].classList.add("hideHtmlElement");
+            // singleLinkOfSong[i].classList.add("VisibleHtmlElement");
+            // $("ul.songs-list li:first").hide()
 
 
 
