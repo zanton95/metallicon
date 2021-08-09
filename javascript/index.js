@@ -93,11 +93,16 @@ function takingQueryFromUrl() {
             viewSongs.classList.add("VisibleHtmlElement");
             var wholeSongListContainer = $("ul li").hide();
             var singleLinkOfSong =  $("li");
-        
-            
             wholeSongListContainer[0];
             singleLinkOfSong[i].style.display = "block";
             console.log(singleLinkOfSong[i])
+
+            if(document.URL.split("=")[1] === "single-song?name"){
+                var songsTable = $("ul").hide();
+                var songTitleContainer = $(".songs-title-container").hide();
+            };
+        
+            
         }
     } if (!checkIfSongIsFound) {
         console.log("No Results");
