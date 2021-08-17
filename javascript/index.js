@@ -1,11 +1,12 @@
-// jquery is in last "else" in pageLoaded function 
 
-document.addEventListener("DOMContentLoaded",() => {
+document.addEventListener("DOMContentLoaded", initialize );
+document.addEventListener('keypress', pressEnter );
+
+function initialize() {
     nameAndLyrics();
     pageLoaded();
     takingQueryFromUrl();
-});
-document.addEventListener('keypress', pressEnter );
+};
 
 
 var songs = [
@@ -14,6 +15,7 @@ var songs = [
     {title:"The Unforgiven II", lyrics:"Lay beside me and tell me what they've done <br> And speak the words I wanna hear to make my demons run <br> The door is locked now but it's open if you're true <br> If you can understand the me then I can understand the you <br> <br> Lay beside me, under wicked sky <br> Through black of day, dark of night, we share this, paralyzed <br> The door cracks open but there's no sun shining through <br> Black heart scarring darker still but there's no sun shining through <br> No there's no sun shining through, no there's no sun shining <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Come lay beside me, this won't hurt I swear <br> She loves me not, she loves me still but she'll never love again <br> She lay beside me but she'll be there when I'm gone <br> Black hearts scarring darker still, yes she'll be there when I'm gone <br> Yes she'll be there when I'm gone, dead sure she'll be there? <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Lay beside me, tell me what I've done <br> The door is closed so are your eyes <br> But now I see the sun, now I see the sun <br> <br> Yes now I see it <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you <br> <br> Yeah, what I've felt, what I've known <br> So sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits <br> The one who waits for you <br> <br> Oh, what I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? (so I dub thee unforgiven) <br> <br> Oh, what I've felt <br> Oh, what I've known <br> I'll take this key and I'll bury it in you <br> Because you're unforgiven too <br> <br> Never free, never me <br> 'Cause you're unforgiven too, oh oh" },
 ];
 
+// function below decides which song is displayed by using query strings
 
 function nameAndLyrics () {
         var url = document.URL;
@@ -35,7 +37,7 @@ function nameAndLyrics () {
 
        
         
-
+// function below incerts css into a hidden html element via query strings and decides which page is visible
       
 function pageLoaded () {
     if (document.URL.split("=")[1] === "home") {
@@ -56,7 +58,7 @@ function pageLoaded () {
     }
 }
 
-  
+// finction below checks if enter has been pressed while inside of the search-bar 
 
 function pressEnter(e){
     var keyCode = (window.event) ? e.which : e.keyCode;
@@ -73,9 +75,9 @@ function pressEnter(e){
 
 
 
+// function below decides which song link is displayed when a song name is written in the search-bar
+
 var searchResults = [];
-
-
 function takingQueryFromUrl() {
     var songsArrayLength = songs.length;
     var queryLocationInUrl = window.location.href.split("=").pop();
@@ -87,15 +89,12 @@ function takingQueryFromUrl() {
         
         if (makeLowerCase === songs[i].title.toLowerCase() || titleToLowerCase.includes(makeLowerCase)) {
             searchResults.push(songs[i]);
-            console.log(searchResults);
             checkIfSongIsFound = true;
             var viewSongs =  $("#viewSongs")[0];
             viewSongs.classList.add("VisibleHtmlElement");
             var wholeSongListContainer = $("ul li").hide();
-            var singleLinkOfSong =  $("li");
-            wholeSongListContainer[0];
+            var singleLinkOfSong =  $("li");           
             singleLinkOfSong[i].style.display = "block";
-            console.log(singleLinkOfSong[i])
 
             if(document.URL.split("=")[1] === "single-song?name"){
                 var songsTable = $("ul").hide();
@@ -109,10 +108,7 @@ function takingQueryFromUrl() {
     }
 }
             
-            // wholeSongListContainer[0].classList.add("hideHtmlElement");
-            // singleLinkOfSong[i].classList.add("VisibleHtmlElement");
-            // $("ul.songs-list li:first").hide()
-
+      
 
 
 
