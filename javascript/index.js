@@ -5,6 +5,7 @@ document.addEventListener('keypress', pressEnter );
 function initialize() {
     nameAndLyrics();
     pageLoaded();
+    addLinkToTable();
     takingQueryFromUrl();
 };
 
@@ -70,6 +71,25 @@ function pressEnter(e){
     } 
     
 }
+
+var listOfLinksInTable = ["Nothing Else Matters", "Enter Sandman", "The Unforgiven II"];
+
+function addLinkToTable (){
+  
+        if (document.URL.split("=")[1] === "songs"){
+            var ul = document.getElementById("songs-list");
+            var li = document.createElement("li");
+            var link = document.createElement("a");
+            li.innerHTML = listOfLinksInTable[0];
+            link.href = "index.html?view=single-song?name=Nothing Else Matters";
+            ul.appendChild(li);
+            ul.appendChild(link);
+        }
+  
+    
+}
+
+
 
 
 
