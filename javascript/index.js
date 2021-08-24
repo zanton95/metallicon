@@ -72,18 +72,41 @@ function pressEnter(e){
     
 }
 
-var listOfLinksInTable = ["Nothing Else Matters", "Enter Sandman", "The Unforgiven II"];
+var listOfLinksInTable = ["\xa0 Nothing Else Matters", "\xa0 Enter Sandman", "\xa0 The Unforgiven II"];
 
 function addLinkToTable (){
   
         if (document.URL.split("=")[1] === "songs"){
             var ul = document.getElementById("songs-list");
-            var li = document.createElement("li");
-            var link = document.createElement("a");
-            li.innerHTML = listOfLinksInTable[0];
-            link.href = "index.html?view=single-song?name=Nothing Else Matters";
-            ul.appendChild(li);
-            ul.appendChild(link);
+            var nemHr = document.createElement("hr");
+            var esHr = document.createElement("hr");
+            // var ufHr = document.createElement("hr"); last one not in use
+
+            var nemSong = document.createElement("a");
+            var nemLink = document.createTextNode(listOfLinksInTable[0]);
+            nemSong.appendChild(nemLink); 
+            ul.appendChild(nemSong);
+            nemSong.href = "index.html?view=single-song?name=Nothing Else Matters";
+            ul.appendChild(nemHr);
+
+            var esSong = document.createElement("a");
+            var esLink = document.createTextNode(listOfLinksInTable[1]);
+            esSong.appendChild(esLink); 
+            ul.appendChild(esSong);
+            esSong.href = "index.html?view=single-song?name=Enter Sandman";
+            ul.appendChild(esHr);
+
+            var ufSong = document.createElement("a");
+            var ufLink = document.createTextNode(listOfLinksInTable[2]);
+            ufSong.appendChild(ufLink); 
+            ul.appendChild(ufSong);
+            ufSong.href = "index.html?view=single-song?name=The Unforgiven II";
+            
+
+            nemSong.classList.add("song-link");
+            esSong.classList.add("song-link");
+            ufSong.classList.add("song-link");
+           
         }
   
     
