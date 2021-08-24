@@ -108,6 +108,11 @@ function addLinkToTable (){
             ufSong.classList.add("song-link");
            
         }
+
+        if (document.URL.split("=")[2] === "Nothing%20Else%20Matters" || document.URL.split("=")[2] === "Enter%20Sandman" || document.URL.split("=")[2] === "The%20Unforgiven%20II"){
+            var viewSongs =  $("#viewSongs")[0].hide();
+    
+        }
   
     
 }
