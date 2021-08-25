@@ -102,6 +102,7 @@ function addLinkToTable (){
             ul.appendChild(ufSong);
             ufSong.href = "index.html?view=single-song?name=The Unforgiven II";
             
+            
 
             nemSong.classList.add("song-link");
             esSong.classList.add("song-link");
@@ -124,7 +125,7 @@ function addLinkToTable (){
 
 
 // function below decides which song link is displayed when a song name is written in the search-bar
-
+var linksArray = ["index.html?view=single-song?name=Nothing Else Matters", "index.html?view=single-song?name=Enter Sandman", "index.html?view=single-song?name=The Unforgiven II"]
 var searchResults = [];
 function takingQueryFromUrl() {
     var songsArrayLength = songs.length;
@@ -138,22 +139,30 @@ function takingQueryFromUrl() {
         if (makeLowerCase === songs[i].title.toLowerCase() || titleToLowerCase.includes(makeLowerCase)) {
             searchResults.push(songs[i]);
             checkIfSongIsFound = true;
+            var ul = document.getElementById("songs-list");
             var viewSongs =  $("#viewSongs")[0];
             viewSongs.classList.add("VisibleHtmlElement");
-            var wholeSongListContainer = $("ul li").hide();
-            var singleLinkOfSong =  $("li");           
-            singleLinkOfSong[i].style.display = "block";
-
-            if(document.URL.split("=")[1] === "single-song?name"){
-                var songsTable = $("ul").hide();
-                var songTitleContainer = $(".songs-title-container").hide();
-            };
-        
+            var searchedSong = document.createElement("a");
+            var searchedLink = document.createTextNode(listOfLinksInTable[i]);
+            searchedSong.appendChild(searchedLink); 
+            ul.appendChild(searchedSong);
+          
             
-        }
-    } if (!checkIfSongIsFound) {
-        console.log("No Results");
+        } 
+    } for (i = 0; i < listOfLinksInTable.length; i++){
+        
+        searchedSong.href = linksArray[0];
+        searchedSong.classList.add("song-link");
+        console.log(listOfLinksInTable[i])
     }
+       
+            
+        
+        
+        
+            if (!checkIfSongIsFound) {
+                console.log("No Results");
+            }
 }
             
       
@@ -181,12 +190,26 @@ function takingQueryFromUrl() {
 
 
 
+//  } if (listOfLinksInTable[i] === "\xa0 Nothing Else Matters") {
+//     searchedSong.href = "index.html?view=single-song?name=Nothing Else Matters";
+//     searchedSong.classList.add("song-link");
+
+
+// }
 
 
 
 
+//   var viewSongs =  $("#viewSongs")[0];
+//   viewSongs.classList.add("VisibleHtmlElement");
+//   var wholeSongListContainer = $("ul li").hide();
+//   var singleLinkOfSong =  $("li");           
+//   singleLinkOfSong[i].style.display = "block";
 
-
+//   if(document.URL.split("=")[1] === "single-song?name"){
+//       var songsTable = $("ul").hide();
+//       var songTitleContainer = $(".songs-title-container").hide();
+//   }
 
 
 
