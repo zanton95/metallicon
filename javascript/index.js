@@ -16,8 +16,11 @@ var songs = [
     {title:"The Unforgiven II", lyrics:"Lay beside me and tell me what they've done <br> And speak the words I wanna hear to make my demons run <br> The door is locked now but it's open if you're true <br> If you can understand the me then I can understand the you <br> <br> Lay beside me, under wicked sky <br> Through black of day, dark of night, we share this, paralyzed <br> The door cracks open but there's no sun shining through <br> Black heart scarring darker still but there's no sun shining through <br> No there's no sun shining through, no there's no sun shining <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Come lay beside me, this won't hurt I swear <br> She loves me not, she loves me still but she'll never love again <br> She lay beside me but she'll be there when I'm gone <br> Black hearts scarring darker still, yes she'll be there when I'm gone <br> Yes she'll be there when I'm gone, dead sure she'll be there? <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Lay beside me, tell me what I've done <br> The door is closed so are your eyes <br> But now I see the sun, now I see the sun <br> <br> Yes now I see it <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you <br> <br> Yeah, what I've felt, what I've known <br> So sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits <br> The one who waits for you <br> <br> Oh, what I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? (so I dub thee unforgiven) <br> <br> Oh, what I've felt <br> Oh, what I've known <br> I'll take this key and I'll bury it in you <br> Because you're unforgiven too <br> <br> Never free, never me <br> 'Cause you're unforgiven too, oh oh" },
 ];
 
+/**
+ * Lev:
+ * Please change name of funciton to reflect what you're explaining :)
+ */
 // function below decides which song is displayed by using query strings
-
 function nameAndLyrics () {
         var url = document.URL;
         var arrayLength = songs.length;
@@ -38,8 +41,11 @@ function nameAndLyrics () {
 
        
         
-// function below incerts css into a hidden html element via query strings and decides which page is visible
-      
+/**
+ * Lev:
+ * Please change name of funciton to reflect what you're explaining :)
+ */
+// function below incerts css into a hidden html element via query strings and decides which page is visible   
 function pageLoaded () {
     if (document.URL.split("=")[1] === "home") {
         var viewHome =  document.getElementById("viewHome")
@@ -59,8 +65,11 @@ function pageLoaded () {
     }
 }
 
+/**
+ * Lev:
+ * Please change name of funciton to reflect what you're explaining :)
+ */
 // finction below checks if enter has been pressed while inside of the search-bar 
-
 function pressEnter(e){
     var keyCode = (window.event) ? e.which : e.keyCode;
     var searchBarInputBox = document.getElementById("search-bar-press"); 
@@ -72,11 +81,37 @@ function pressEnter(e){
     
 }
 
+/**
+ * Lev:
+ *  - I think if you're going to have variables outside of a function's scope, which means that they're in the 'global' scope and everyone can access them, put them on top of the page.
+ *    This will make things clearer.
+ *  - Notice that you are manually writting song names in this array. Why? don't you already have an array with this data? What if a new song is added to your songs array?
+ */
 var listOfLinksInTable = ["\xa0 Nothing Else Matters", "\xa0 Enter Sandman", "\xa0 The Unforgiven II"];
 
 function addLinkToTable (){
-  
+        /**
+         * Lev:
+         * This if is ok, but you already are checking this in your pageLoaded() function. Why not just run this method from inside the if there?
+         */
         if (document.URL.split("=")[1] === "songs"){
+
+            /**
+             * Lev:
+             * Ok so it looks like you're able to add links with js and manipulate html - that's awesome!
+             * 
+             * There is one big problem with this code - will this work if another song is added to your array of songs?
+             *  - It is important that you think of the songs array as if it's out of your control which songs are there and how many. Our next step would be to get it 
+             *    from a different source, in which case there can be 20 or 30 or 100 songs in the array. Will you then create this 100 times? What if the songs change every hour?
+             *  - Remember that we said, everytime you find yourself copy-pasting code, stop and think - am I doing something wrong or is it an exception and there is good reason to copy-pase?
+             *  - You have an array of songs. Each item there has a name that you can use. Try going over that array and for each item create the link.
+             * 
+             *  - [Optional] I think that working with song names that have whitespaces that you always have to replace and may have other characters that can cause issues is a lot of work.
+             *    One suggestion I have that may help: your songs array is an array of objects. Right now each song has a title and lyrics. What if each song would also have another field,
+             *    let's call it 'name' or w/e sounds good to you. That var can hold a kebab-cased (this-is-how-we-call-this-kind-of-writing) name for each song?
+             *    This way a linkg to each song would be simpler: index.html?view=single-song?name=nothing-else-matters and your function nameAndLyrics() wouldn't need to replace anything.
+             *    If you think this is a useful change - it's ok if you take time to solve this. It's also fine if you prefer to go on as is.
+             */
             var ul = document.getElementById("songs-list");
             var nemHr = document.createElement("hr");
             var esHr = document.createElement("hr");
