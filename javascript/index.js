@@ -11,9 +11,9 @@ function initialize() {
 
 
 var songs = [
-    {title:"Nothing Else Matters", lyrics:"So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> And nothing else matters <br> <br> Never opened myself this way <br> Life is ours, we live it our way <br> All these words I don't just say <br> And nothing else matters <br> <br> Trust I seek and I find in you <br> Every day for us something new <br> Open mind for a different view <br> And nothing else matters <br> <br> Never cared for what they do <br> Never cared for what they know <br> But I know <br> <br> So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> And nothing else matters <br> <br> Never cared for what they do <br> Never cared for what they know <br> But I know <br> <br> I never opened myself this way <br> Life is ours, we live it our way <br> All these words I don't just say <br> And nothing else matters <br> <br> Trust I seek and I find in you <br> Every day for us, something new <br> Open mind for a different view <br> And nothing else matters <br> <br> Never cared for what they say <br> Never cared for games they play <br> Never cared for what they do <br> Never cared for what they know <br> And I know, yeah! <br> <br> So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> No, nothing else matters <br>" },
-    {title:"Enter Sandman", lyrics:"Say your prayers little one <br> Don't forget, my son <br> To include everyone <br> Tuck you in, warm within <br> Keep you free from sin <br> 'Till the sandman he comes <br> Sleep with one eye open <br> Gripping your pillow tight <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Somethings wrong, shut the light <br> Heavy thoughts tonight <br> And they aren't of Snow White <br> Dreams of war, dreams of liars <br> Dreams of dragon's fire <br> And of things that will bite <br> Sleep with one eye open <br> Gripping your pillow tight <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Now I lay me down to sleep <br> Now I lay me down to sleep <br> I pray the Lord my soul to keep <br> I pray the Lord my soul to keep <br> If I die before I wake <br> If I die before I wake <br> I pray the lord my soul to take <br> I pray the lord my soul to take <br> <br> Hush little baby, don't say a word <br> And never mind that noise you heard <br> It's just the beasts under your bed <br> In your closet, in your head <br> <br> Exit, light <br> Enter, night <br> Grain of sand <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Yeah! <br> <br> We're off to never-never land <br> Take my hand <br> We're off to never-never land <br> Take my hand"}, 
-    {title:"The Unforgiven II", lyrics:"Lay beside me and tell me what they've done <br> And speak the words I wanna hear to make my demons run <br> The door is locked now but it's open if you're true <br> If you can understand the me then I can understand the you <br> <br> Lay beside me, under wicked sky <br> Through black of day, dark of night, we share this, paralyzed <br> The door cracks open but there's no sun shining through <br> Black heart scarring darker still but there's no sun shining through <br> No there's no sun shining through, no there's no sun shining <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Come lay beside me, this won't hurt I swear <br> She loves me not, she loves me still but she'll never love again <br> She lay beside me but she'll be there when I'm gone <br> Black hearts scarring darker still, yes she'll be there when I'm gone <br> Yes she'll be there when I'm gone, dead sure she'll be there? <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Lay beside me, tell me what I've done <br> The door is closed so are your eyes <br> But now I see the sun, now I see the sun <br> <br> Yes now I see it <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you <br> <br> Yeah, what I've felt, what I've known <br> So sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits <br> The one who waits for you <br> <br> Oh, what I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? (so I dub thee unforgiven) <br> <br> Oh, what I've felt <br> Oh, what I've known <br> I'll take this key and I'll bury it in you <br> Because you're unforgiven too <br> <br> Never free, never me <br> 'Cause you're unforgiven too, oh oh" },
+    {title:"Nothing Else Matters", lyrics:"So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> And nothing else matters <br> <br> Never opened myself this way <br> Life is ours, we live it our way <br> All these words I don't just say <br> And nothing else matters <br> <br> Trust I seek and I find in you <br> Every day for us something new <br> Open mind for a different view <br> And nothing else matters <br> <br> Never cared for what they do <br> Never cared for what they know <br> But I know <br> <br> So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> And nothing else matters <br> <br> Never cared for what they do <br> Never cared for what they know <br> But I know <br> <br> I never opened myself this way <br> Life is ours, we live it our way <br> All these words I don't just say <br> And nothing else matters <br> <br> Trust I seek and I find in you <br> Every day for us, something new <br> Open mind for a different view <br> And nothing else matters <br> <br> Never cared for what they say <br> Never cared for games they play <br> Never cared for what they do <br> Never cared for what they know <br> And I know, yeah! <br> <br> So close, no matter how far <br> Couldn't be much more from the heart <br> Forever trusting who we are <br> No, nothing else matters <br>", Url: "index.html?view=single-song?name=Nothing Else Matters"},
+    {title:"Enter Sandman", lyrics:"Say your prayers little one <br> Don't forget, my son <br> To include everyone <br> Tuck you in, warm within <br> Keep you free from sin <br> 'Till the sandman he comes <br> Sleep with one eye open <br> Gripping your pillow tight <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Somethings wrong, shut the light <br> Heavy thoughts tonight <br> And they aren't of Snow White <br> Dreams of war, dreams of liars <br> Dreams of dragon's fire <br> And of things that will bite <br> Sleep with one eye open <br> Gripping your pillow tight <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Now I lay me down to sleep <br> Now I lay me down to sleep <br> I pray the Lord my soul to keep <br> I pray the Lord my soul to keep <br> If I die before I wake <br> If I die before I wake <br> I pray the lord my soul to take <br> I pray the lord my soul to take <br> <br> Hush little baby, don't say a word <br> And never mind that noise you heard <br> It's just the beasts under your bed <br> In your closet, in your head <br> <br> Exit, light <br> Enter, night <br> Grain of sand <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Yeah! <br> <br> We're off to never-never land <br> Take my hand <br> We're off to never-never land <br> Take my hand", Url: "index.html?view=single-song?name=Enter Sandman"}, 
+    {title:"The Unforgiven II", lyrics:"Lay beside me and tell me what they've done <br> And speak the words I wanna hear to make my demons run <br> The door is locked now but it's open if you're true <br> If you can understand the me then I can understand the you <br> <br> Lay beside me, under wicked sky <br> Through black of day, dark of night, we share this, paralyzed <br> The door cracks open but there's no sun shining through <br> Black heart scarring darker still but there's no sun shining through <br> No there's no sun shining through, no there's no sun shining <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Come lay beside me, this won't hurt I swear <br> She loves me not, she loves me still but she'll never love again <br> She lay beside me but she'll be there when I'm gone <br> Black hearts scarring darker still, yes she'll be there when I'm gone <br> Yes she'll be there when I'm gone, dead sure she'll be there? <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Lay beside me, tell me what I've done <br> The door is closed so are your eyes <br> But now I see the sun, now I see the sun <br> <br> Yes now I see it <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you <br> <br> Yeah, what I've felt, what I've known <br> So sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits <br> The one who waits for you <br> <br> Oh, what I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? (so I dub thee unforgiven) <br> <br> Oh, what I've felt <br> Oh, what I've known <br> I'll take this key and I'll bury it in you <br> Because you're unforgiven too <br> <br> Never free, never me <br> 'Cause you're unforgiven too, oh oh", Url: "index.html?view=single-song?name=The Unforgiven II" },
 ];
 
 /**
@@ -87,17 +87,56 @@ function pressEnter(e){
  *    This will make things clearer.
  *  - Notice that you are manually writting song names in this array. Why? don't you already have an array with this data? What if a new song is added to your songs array?
  */
-var listOfLinksInTable = ["\xa0 Nothing Else Matters", "\xa0 Enter Sandman", "\xa0 The Unforgiven II"];
 
 function addLinkToTable (){
-        /**
-         * Lev:
-         * This if is ok, but you already are checking this in your pageLoaded() function. Why not just run this method from inside the if there?
-         */
+    var ul = document.getElementById("songs-list");
+    var hr = document.createElement("hr");
+    
         if (document.URL.split("=")[1] === "songs"){
 
-            /**
-             * Lev:
+        
+           for(i = 0; i < songs.length; i++) {
+               var songLink = document.createElement("a");
+               var songLinkName = document.createTextNode(songs[i].title);
+               songLink.appendChild(songLinkName); 
+               ul.appendChild(songLink);
+               songLink.href = songs[i].Url;
+               ul.appendChild(hr);
+               songLink.classList.add("song-link");
+
+           } 
+            
+            
+        } else if (document.URL.split("=")[2] === "Nothing%20Else%20Matters" || document.URL.split("=")[2] === "Enter%20Sandman" || document.URL.split("=")[2] === "The%20Unforgiven%20II"){
+            var viewSongs =  $("#viewSongs")[0].hide();
+            
+        }
+    }
+            
+            
+            // esSong.classList.add("song-link");
+            // ufSong.classList.add("song-link");
+            // var esSong = document.createElement("a");
+            // var esLink = document.createTextNode(listOfLinksInTable[1]);
+            // esSong.appendChild(esLink); 
+            // ul.appendChild(esSong);
+            // esSong.href = "index.html?view=single-song?name=Enter Sandman";
+            // ul.appendChild(esHr);
+
+            // var ufSong = document.createElement("a");
+            // var ufLink = document.createTextNode(listOfLinksInTable[2]);
+            // ufSong.appendChild(ufLink); 
+            // ul.appendChild(ufSong);
+            // ufSong.href = "index.html?view=single-song?name=The Unforgiven II";
+            
+            
+
+
+
+
+
+ /**
+             * Lev: for addlinktotable function
              * Ok so it looks like you're able to add links with js and manipulate html - that's awesome!
              * 
              * There is one big problem with this code - will this work if another song is added to your array of songs?
@@ -112,47 +151,7 @@ function addLinkToTable (){
              *    This way a linkg to each song would be simpler: index.html?view=single-song?name=nothing-else-matters and your function nameAndLyrics() wouldn't need to replace anything.
              *    If you think this is a useful change - it's ok if you take time to solve this. It's also fine if you prefer to go on as is.
              */
-            var ul = document.getElementById("songs-list");
-            var nemHr = document.createElement("hr");
-            var esHr = document.createElement("hr");
-            // var ufHr = document.createElement("hr"); last one not in use
-
-            var nemSong = document.createElement("a");
-            var nemLink = document.createTextNode(listOfLinksInTable[0]);
-            nemSong.appendChild(nemLink); 
-            ul.appendChild(nemSong);
-            nemSong.href = "index.html?view=single-song?name=Nothing Else Matters";
-            ul.appendChild(nemHr);
-
-            var esSong = document.createElement("a");
-            var esLink = document.createTextNode(listOfLinksInTable[1]);
-            esSong.appendChild(esLink); 
-            ul.appendChild(esSong);
-            esSong.href = "index.html?view=single-song?name=Enter Sandman";
-            ul.appendChild(esHr);
-
-            var ufSong = document.createElement("a");
-            var ufLink = document.createTextNode(listOfLinksInTable[2]);
-            ufSong.appendChild(ufLink); 
-            ul.appendChild(ufSong);
-            ufSong.href = "index.html?view=single-song?name=The Unforgiven II";
-            
-            
-
-            nemSong.classList.add("song-link");
-            esSong.classList.add("song-link");
-            ufSong.classList.add("song-link");
-           
-        }
-
-        if (document.URL.split("=")[2] === "Nothing%20Else%20Matters" || document.URL.split("=")[2] === "Enter%20Sandman" || document.URL.split("=")[2] === "The%20Unforgiven%20II"){
-            var viewSongs =  $("#viewSongs")[0].hide();
-    
-        }
-  
-    
-}
-
+            // var esHr = document.createElement("hr");
 
 
 
