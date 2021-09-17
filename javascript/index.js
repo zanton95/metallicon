@@ -91,19 +91,20 @@ function pressEnter(e){
 function addLinkToTable (){
     var ul = document.getElementById("songs-list");
     var hr = document.createElement("hr");
-    
-        if (document.URL.split("=")[1] === "songs"){
-
+    if (document.URL.split("=")[1] === "songs"){
         
-           for(i = 0; i < songs.length; i++) {
-               var songLink = document.createElement("a");
-               var songLinkName = document.createTextNode(songs[i].title);
-               songLink.appendChild(songLinkName); 
-               ul.appendChild(songLink);
-               songLink.href = songs[i].Url;
-               ul.appendChild(hr);
-               songLink.classList.add("song-link");
-
+        
+        for(i = 0; i < songs.length; i++) {
+            var songListItem = document.createElement("li");
+            var songLink = document.createElement("a");
+            var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
+            songLink.appendChild(songLinkName); 
+            ul.appendChild(songListItem);
+            // songListItem.appendChild(hr);
+            songListItem.appendChild(songLink);
+            songLink.href = songs[i].Url;
+            songLink.classList.add("song-link");
+               
            } 
             
             
