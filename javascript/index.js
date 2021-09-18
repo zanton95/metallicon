@@ -1,10 +1,10 @@
 
 document.addEventListener("DOMContentLoaded", initialize );
-document.addEventListener('keypress', pressEnter );
+document.addEventListener('keypress', checkIfEnterKeyPressed );
 
 function initialize() {
-    nameAndLyrics();
-    pageLoaded();
+    songDisplayedWithQueryString();
+    pushCssIntoHtmlToViewPage();
     addLinkToTable();
     takingQueryFromUrl();
 };
@@ -21,7 +21,7 @@ var songs = [
  * Please change name of funciton to reflect what you're explaining :)
  */
 // function below decides which song is displayed by using query strings
-function nameAndLyrics () {
+function songDisplayedWithQueryString () {
         var url = document.URL;
         var arrayLength = songs.length;
     if (document.URL.split("=")[1] === "single-song?name"){
@@ -46,13 +46,45 @@ function nameAndLyrics () {
  * Please change name of funciton to reflect what you're explaining :)
  */
 // function below incerts css into a hidden html element via query strings and decides which page is visible   
-function pageLoaded () {
+function pushCssIntoHtmlToViewPage () {
     if (document.URL.split("=")[1] === "home") {
         var viewHome =  document.getElementById("viewHome")
         viewHome.classList.add("VisibleHtmlElement");
     } else if (document.URL.split("=")[1] === "songs") {
             var viewSongs = document.getElementById("viewSongs")
             viewSongs.classList.add("VisibleHtmlElement")
+            var ul = document.getElementById("songs-list");
+            if (document.URL.split("=")[1] === "songs"){
+                 /**
+           
+             * 
+             *  - [Optional] I think that working with song names that have whitespaces that you always have to replace and may have other characters that can cause issues is a lot of work.
+             *    One suggestion I have that may help: your songs array is an array of objects. Right now each song has a title and lyrics. What if each song would also have another field,
+             *    let's call it 'name' or w/e sounds good to you. That var can hold a kebab-cased (this-is-how-we-call-this-kind-of-writing) name for each song?
+             *    This way a linkg to each song would be simpler: index.html?view=single-song?name=nothing-else-matters and your function nameAndLyrics() wouldn't need to replace anything.
+             *    If you think this is a useful change - it's ok if you take time to solve this. It's also fine if you prefer to go on as is.
+             */
+
+                
+                for(i = 0; i < songs.length; i++) {
+                    var hr = document.createElement("hr");
+                    var songListItem = document.createElement("li");
+                    var songLink = document.createElement("a");
+                    var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
+                    songLink.appendChild(songLinkName); 
+                    ul.appendChild(songListItem);
+                    // songListItem.appendChild(hr);
+                    songListItem.appendChild(songLink);
+                    songLink.href = songs[i].Url;
+                    songLink.classList.add("song-link");
+                       
+                   } 
+                    
+                    
+                } else if (document.URL.split("=")[2] === "Nothing%20Else%20Matters" || document.URL.split("=")[2] === "Enter%20Sandman" || document.URL.split("=")[2] === "The%20Unforgiven%20II"){
+                    var viewSongs =  $("#viewSongs")[0].hide();
+                    
+                }
     } else if (document.URL.split("=")[1] === "single-song?name") {
     var singleSong = document.getElementById("viewSingleSong")
     singleSong.classList.add("VisibleHtmlElement")
@@ -65,12 +97,9 @@ function pageLoaded () {
     }
 }
 
-/**
- * Lev:
- * Please change name of funciton to reflect what you're explaining :)
- */
-// finction below checks if enter has been pressed while inside of the search-bar 
-function pressEnter(e){
+ 
+
+function checkIfEnterKeyPressed(e){
     var keyCode = (window.event) ? e.which : e.keyCode;
     var searchBarInputBox = document.getElementById("search-bar-press"); 
     var searchContent = searchBarInputBox.value.trim();
@@ -81,78 +110,14 @@ function pressEnter(e){
     
 }
 
-/**
- * Lev:
- *  - I think if you're going to have variables outside of a function's scope, which means that they're in the 'global' scope and everyone can access them, put them on top of the page.
- *    This will make things clearer.
- *  - Notice that you are manually writting song names in this array. Why? don't you already have an array with this data? What if a new song is added to your songs array?
- */
-
-function addLinkToTable (){
-    var ul = document.getElementById("songs-list");
-    if (document.URL.split("=")[1] === "songs"){
-        
-        
-        for(i = 0; i < songs.length; i++) {
-            var hr = document.createElement("hr");
-            var songListItem = document.createElement("li");
-            var songLink = document.createElement("a");
-            var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
-            songLink.appendChild(songLinkName); 
-            ul.appendChild(songListItem);
-            // songListItem.appendChild(hr);
-            songListItem.appendChild(songLink);
-            songLink.href = songs[i].Url;
-            songLink.classList.add("song-link");
-               
-           } 
-            
-            
-        } else if (document.URL.split("=")[2] === "Nothing%20Else%20Matters" || document.URL.split("=")[2] === "Enter%20Sandman" || document.URL.split("=")[2] === "The%20Unforgiven%20II"){
-            var viewSongs =  $("#viewSongs")[0].hide();
-            
-        }
-    }
-            
-            
-            // esSong.classList.add("song-link");
-            // ufSong.classList.add("song-link");
-            // var esSong = document.createElement("a");
-            // var esLink = document.createTextNode(listOfLinksInTable[1]);
-            // esSong.appendChild(esLink); 
-            // ul.appendChild(esSong);
-            // esSong.href = "index.html?view=single-song?name=Enter Sandman";
-            // ul.appendChild(esHr);
-
-            // var ufSong = document.createElement("a");
-            // var ufLink = document.createTextNode(listOfLinksInTable[2]);
-            // ufSong.appendChild(ufLink); 
-            // ul.appendChild(ufSong);
-            // ufSong.href = "index.html?view=single-song?name=The Unforgiven II";
-            
-            
 
 
 
 
 
- /**
-             * Lev: for addlinktotable function
-             * Ok so it looks like you're able to add links with js and manipulate html - that's awesome!
-             * 
-             * There is one big problem with this code - will this work if another song is added to your array of songs?
-             *  - It is important that you think of the songs array as if it's out of your control which songs are there and how many. Our next step would be to get it 
-             *    from a different source, in which case there can be 20 or 30 or 100 songs in the array. Will you then create this 100 times? What if the songs change every hour?
-             *  - Remember that we said, everytime you find yourself copy-pasting code, stop and think - am I doing something wrong or is it an exception and there is good reason to copy-pase?
-             *  - You have an array of songs. Each item there has a name that you can use. Try going over that array and for each item create the link.
-             * 
-             *  - [Optional] I think that working with song names that have whitespaces that you always have to replace and may have other characters that can cause issues is a lot of work.
-             *    One suggestion I have that may help: your songs array is an array of objects. Right now each song has a title and lyrics. What if each song would also have another field,
-             *    let's call it 'name' or w/e sounds good to you. That var can hold a kebab-cased (this-is-how-we-call-this-kind-of-writing) name for each song?
-             *    This way a linkg to each song would be simpler: index.html?view=single-song?name=nothing-else-matters and your function nameAndLyrics() wouldn't need to replace anything.
-             *    If you think this is a useful change - it's ok if you take time to solve this. It's also fine if you prefer to go on as is.
-             */
-            // var esHr = document.createElement("hr");
+
+ 
+            
 
 
 
