@@ -125,6 +125,7 @@ body {
 
 .songs-list {
   border-style: solid;
+  border-top: none;
   width: 890px;
   list-style-type: none;
   border-width: 0.2px;
@@ -163,6 +164,8 @@ color: white;
   padding-bottom: 12px;
   padding-top: 12px;
   border-top: 1px solid black;
+  border-radius: 2.5px;
+  border-width: 0.2px;
 }
 
 

@@ -90,11 +90,11 @@ function pressEnter(e){
 
 function addLinkToTable (){
     var ul = document.getElementById("songs-list");
-    var hr = document.createElement("hr");
     if (document.URL.split("=")[1] === "songs"){
         
         
         for(i = 0; i < songs.length; i++) {
+            var hr = document.createElement("hr");
             var songListItem = document.createElement("li");
             var songLink = document.createElement("a");
             var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
