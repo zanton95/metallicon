@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", initialize );
 document.addEventListener('keypress', checkIfEnterKeyPressed );
 
 function initialize() {
+    /**
+     * Lev CR:
+     * Hey man, I went over your functions and I really like that you've added descriptiosn to all of them, it really helps understand the code. I can see you've updated some function names too,
+     * it is extremely helpful for the reader! I think this can still be improved a bit, and it will also help you understand the issue we're trying to solve.
+     * Try renaming the function takingQueryFromUrl(..) to something that says exactly what it does. (much like your description there explains!)
+     * 
+     * Once you've done that, take a look at this flow again and see if you notice a problem. Remember all three of these functions run for every page right now.
+     */
     songDisplayedWithQueryString();
     pushCssIntoHtmlToViewPage();
     takingQueryFromUrl()
