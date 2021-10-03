@@ -5,9 +5,11 @@ document.addEventListener('keypress', checkIfEnterKeyPressed );
 function initialize() {
     songDisplayedWithQueryString();
     pushCssIntoHtmlToViewPage();
-    takingQueryFromUrl()
+    testingIfSongSearched ()
+    addsHtmlToSongsPageAndSearchedSong()
     
 };
+
 
 
 var songs = [
@@ -81,10 +83,11 @@ function pushCssIntoHtmlToViewPage () {
                    } 
                     
                     
-                } else if (document.URL.split("=")[2] === songs[i].StringInsideUrl){
-                    var viewSongs =  $("#viewSongs")[0].hide();
+                } 
+                // else if (document.URL.split("=")[2] === songs[i].StringInsideUrl){
+                //     var viewSongs =  $("#viewSongs")[0].hide();
                     
-                }
+                // }
     } else if (document.URL.split("=")[1] === "single-song?name") {
     var singleSong = document.getElementById("viewSingleSong")
     singleSong.classList.add("VisibleHtmlElement")
@@ -98,7 +101,7 @@ function pushCssIntoHtmlToViewPage () {
 }
 
  
-
+    var testToOperateAfterEnterKey = false;
 function checkIfEnterKeyPressed(e){
     var keyCode = (window.event) ? e.which : e.keyCode;
     var searchBarInputBox = document.getElementById("search-bar-press"); 
@@ -106,11 +109,17 @@ function checkIfEnterKeyPressed(e){
     
     if (keyCode === 13 && searchContent) {
         window.location.href = 'index.html?view=search-results?p=' + searchContent;
+        var testToOperateAfterEnterKey = true;
     } 
     
 }
 
+function testingIfSongSearched () {
+    if (functionTest = true) {
+        takingQueryFromUrl()
+    }
 
+}
 
 
 
@@ -126,7 +135,7 @@ function checkIfEnterKeyPressed(e){
 
 // function below decides which song link is displayed when a song name is written in the search-bar
 var searchResults = [];
-function takingQueryFromUrl() {
+function takingQueryFromUrl(checkIfEnterKeyPressed) {
     var queryLocationInUrl = window.location.href.split("=").pop();
     var songNameUrlString = queryLocationInUrl.replaceAll("%20", " ")
     var makeLowerCase = songNameUrlString.toLowerCase()
@@ -146,14 +155,18 @@ function takingQueryFromUrl() {
             searchedSong.href = songs[i].Url;
             searchedSong.classList.add("song-link");
             console.log(songs[i].Url)
-            viewSongs.classList.add("VisibleHtmlElement");
         } 
     } 
     if (!checkIfSongIsFound) {
         console.log("No Results");
     }
 }
-            
+        function addsHtmlToSongsPageAndSearchedSong(){
+            if (document.URL.split("=")[1] === "songs" || document.URL.split("=")[1] === "search-results?p"){
+                viewSongs.classList.add("VisibleHtmlElement");
+            }
+
+         }
             
 
             
