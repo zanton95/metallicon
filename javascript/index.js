@@ -18,10 +18,7 @@ var songs = [
     {title:"The Unforgiven II", lyrics:"Lay beside me and tell me what they've done <br> And speak the words I wanna hear to make my demons run <br> The door is locked now but it's open if you're true <br> If you can understand the me then I can understand the you <br> <br> Lay beside me, under wicked sky <br> Through black of day, dark of night, we share this, paralyzed <br> The door cracks open but there's no sun shining through <br> Black heart scarring darker still but there's no sun shining through <br> No there's no sun shining through, no there's no sun shining <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Come lay beside me, this won't hurt I swear <br> She loves me not, she loves me still but she'll never love again <br> She lay beside me but she'll be there when I'm gone <br> Black hearts scarring darker still, yes she'll be there when I'm gone <br> Yes she'll be there when I'm gone, dead sure she'll be there? <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Lay beside me, tell me what I've done <br> The door is closed so are your eyes <br> But now I see the sun, now I see the sun <br> <br> Yes now I see it <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you <br> <br> Yeah, what I've felt, what I've known <br> So sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits <br> The one who waits for you <br> <br> Oh, what I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? (so I dub thee unforgiven) <br> <br> Oh, what I've felt <br> Oh, what I've known <br> I'll take this key and I'll bury it in you <br> Because you're unforgiven too <br> <br> Never free, never me <br> 'Cause you're unforgiven too, oh oh", Url: "index.html?view=single-song?name=The Unforgiven II", StringInsideUrl: "Nothing%20Else%20Matters"},
 ];
 
-/**
- * Lev:
- * Please change name of funciton to reflect what you're explaining :)
- */
+
 // function below decides which song is displayed by using query strings
 function songDisplayedWithQueryString () {
         var url = document.URL;
@@ -43,10 +40,7 @@ function songDisplayedWithQueryString () {
 
        
         
-/**
- * Lev:
- * Please change name of funciton to reflect what you're explaining :)
- */
+
 // function below incerts css into a hidden html element via query strings and decides which page is visible   
 function pushCssIntoHtmlToViewPage () {
     if (document.URL.split("=")[1] === "home") {
@@ -75,7 +69,6 @@ function pushCssIntoHtmlToViewPage () {
                     var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
                     songLink.appendChild(songLinkName); 
                     ul.appendChild(songListItem);
-                    // songListItem.appendChild(hr);
                     songListItem.appendChild(songLink);
                     songLink.href = songs[i].Url;
                     songLink.classList.add("song-link");
@@ -84,10 +77,7 @@ function pushCssIntoHtmlToViewPage () {
                     
                     
                 } 
-                // else if (document.URL.split("=")[2] === songs[i].StringInsideUrl){
-                //     var viewSongs =  $("#viewSongs")[0].hide();
-                    
-                // }
+               
     } else if (document.URL.split("=")[1] === "single-song?name") {
     var singleSong = document.getElementById("viewSingleSong")
     singleSong.classList.add("VisibleHtmlElement")
@@ -100,8 +90,9 @@ function pushCssIntoHtmlToViewPage () {
     }
 }
 
- 
-    var testToOperateAfterEnterKey = false;
+
+// function below checks whether the enter key is being pressed 
+var testToOperateAfterEnterKey = false;
 function checkIfEnterKeyPressed(e){
     var keyCode = (window.event) ? e.which : e.keyCode;
     var searchBarInputBox = document.getElementById("search-bar-press"); 
@@ -114,6 +105,8 @@ function checkIfEnterKeyPressed(e){
     
 }
 
+
+// function below operates a different function but only after the enter key was pressed 
 function testingIfSongSearched () {
     if (functionTest = true) {
         takingQueryFromUrl()
@@ -161,7 +154,9 @@ function takingQueryFromUrl(checkIfEnterKeyPressed) {
         console.log("No Results");
     }
 }
-        function addsHtmlToSongsPageAndSearchedSong(){
+        
+// function below decides when to make html elements visible based on q params 
+function addsHtmlToSongsPageAndSearchedSong(){
             if (document.URL.split("=")[1] === "songs" || document.URL.split("=")[1] === "search-results?p"){
                 viewSongs.classList.add("VisibleHtmlElement");
             }
@@ -196,26 +191,7 @@ function takingQueryFromUrl(checkIfEnterKeyPressed) {
 
 
 
-//  } if (listOfLinksInTable[i] === "\xa0 Nothing Else Matters") {
-//     searchedSong.href = "index.html?view=single-song?name=Nothing Else Matters";
-//     searchedSong.classList.add("song-link");
 
-
-// }
-
-
-
-
-//   var viewSongs =  $("#viewSongs")[0];
-//   viewSongs.classList.add("VisibleHtmlElement");
-//   var wholeSongListContainer = $("ul li").hide();
-//   var singleLinkOfSong =  $("li");           
-//   singleLinkOfSong[i].style.display = "block";
-
-//   if(document.URL.split("=")[1] === "single-song?name"){
-//       var songsTable = $("ul").hide();
-//       var songTitleContainer = $(".songs-title-container").hide();
-//   }
 
 
 
