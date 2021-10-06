@@ -1,22 +1,15 @@
-"use strict";
+// "use strict"
 
 document.addEventListener("DOMContentLoaded", initialize );
 document.addEventListener('keypress', checkIfEnterKeyPressed );
 
 function initialize() {
-    /**
-     * Lev CR:
-     * Hey man, I went over your functions and I really like that you've added descriptiosn to all of them, it really helps understand the code. I can see you've updated some function names too,
-     * it is extremely helpful for the reader! I think this can still be improved a bit, and it will also help you understand the issue we're trying to solve.
-     * Try renaming the function takingQueryFromUrl(..) to something that says exactly what it does. (much like your description there explains!)
-     * 
-     * Once you've done that, take a look at this flow again and see if you notice a problem. Remember all three of these functions run for every page right now.
-     */
     songDisplayedWithQueryString();
     pushCssIntoHtmlToViewPage();
     testingIfSongSearched ()
     
 };
+
 
 
 var songs = [
@@ -70,7 +63,7 @@ function pushCssIntoHtmlToViewPage () {
              */
 
                 
-                for(var i = 0; i < songs.length; i++) {
+                for(i = 0; i < songs.length; i++) {
                     var hr = document.createElement("hr");
                     var songListItem = document.createElement("li");
                     var songLink = document.createElement("a");
@@ -106,10 +99,11 @@ function checkIfEnterKeyPressed(e){
     var keyCode = (window.event) ? e.which : e.keyCode;
     var searchBarInputBox = document.getElementById("search-bar-press"); 
     var searchContent = searchBarInputBox.value.trim();
+    var testToOperateAfterEnterKey = true;
     
     if (keyCode === 13 && searchContent) {
         window.location.href = 'index.html?view=search-results?p=' + searchContent;
-        testToOperateAfterEnterKey = true;
+        
     } 
     
 }
@@ -117,9 +111,10 @@ function checkIfEnterKeyPressed(e){
 
 // function below operates a different function but only after the enter key was pressed 
 function testingIfSongSearched () {
-    if (testToOperateAfterEnterKey === true) {
+    if (testToOperateAfterEnterKey = true) {
         takingQueryFromUrl()
     }
+
 }
 
 
@@ -137,7 +132,7 @@ var checkIfSongIsFound = false;
 
 // function below decides which song link is displayed when a song name is written in the search-bar
 var searchResults = [];
-function takingQueryFromUrl() {
+function takingQueryFromUrl(checkIfEnterKeyPressed) {
     var queryLocationInUrl = window.location.href.split("=").pop();
     var songNameUrlString = queryLocationInUrl.replaceAll("%20", " ")
     var makeLowerCase = songNameUrlString.toLowerCase()
@@ -161,6 +156,8 @@ function takingQueryFromUrl() {
     } 
    
 }
+        
+
  /**
           * Side quest:
           *  - Look at each of the ifs in this function.
@@ -169,3 +166,11 @@ function takingQueryFromUrl() {
           *    a parameter and than it will add the class.
           *  - Don't forget that we have examples on 'js-practice' branch
           */
+ /**
+     * Lev CR:
+     * Hey man, I went over your functions and I really like that you've added descriptiosn to all of them, it really helps understand the code. I can see you've updated some function names too,
+     * it is extremely helpful for the reader! I think this can still be improved a bit, and it will also help you understand the issue we're trying to solve.
+     * Try renaming the function takingQueryFromUrl(..) to something that says exactly what it does. (much like your description there explains!)
+     * 
+     * Once you've done that, take a look at this flow again and see if you notice a problem. Remember all three of these functions run for every page right now.
+     */
