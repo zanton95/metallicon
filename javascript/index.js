@@ -1,3 +1,4 @@
+"use strict";
 
 document.addEventListener("DOMContentLoaded", initialize );
 document.addEventListener('keypress', checkIfEnterKeyPressed );
@@ -69,7 +70,7 @@ function pushCssIntoHtmlToViewPage () {
              */
 
                 
-                for(i = 0; i < songs.length; i++) {
+                for(var i = 0; i < songs.length; i++) {
                     var hr = document.createElement("hr");
                     var songListItem = document.createElement("li");
                     var songLink = document.createElement("a");
@@ -108,6 +109,7 @@ function checkIfEnterKeyPressed(e){
     
     if (keyCode === 13 && searchContent) {
         window.location.href = 'index.html?view=search-results?p=' + searchContent;
+        testToOperateAfterEnterKey = true;
     } 
     
 }
@@ -115,7 +117,7 @@ function checkIfEnterKeyPressed(e){
 
 // function below operates a different function but only after the enter key was pressed 
 function testingIfSongSearched () {
-    if (functionTest = true) {
+    if (testToOperateAfterEnterKey === true) {
         takingQueryFromUrl()
     }
 }
