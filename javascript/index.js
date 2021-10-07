@@ -94,12 +94,12 @@ function pushCssIntoHtmlToViewPage () {
 
 
 // function below checks whether the enter key is being pressed 
-var testToOperateAfterEnterKey = false;
+
 function checkIfEnterKeyPressed(e){
     var keyCode = (window.event) ? e.which : e.keyCode;
     var searchBarInputBox = document.getElementById("search-bar-press"); 
     var searchContent = searchBarInputBox.value.trim();
-    var testToOperateAfterEnterKey = true;
+    
     
     if (keyCode === 13 && searchContent) {
         window.location.href = 'index.html?view=search-results?p=' + searchContent;
@@ -111,9 +111,9 @@ function checkIfEnterKeyPressed(e){
 
 // function below operates a different function but only after the enter key was pressed 
 function testingIfSongSearched () {
-    if (testToOperateAfterEnterKey = true) {
+    
         takingQueryFromUrl()
-    }
+   
 
 }
 
@@ -150,10 +150,12 @@ function takingQueryFromUrl(checkIfEnterKeyPressed) {
             searchedSong.href = songs[i].Url;
             searchedSong.classList.add("song-link");
             checkIfSongIsFound = true;
-        } else if (searchResults.length == 0){
-            console.log("noResult");
-        }
-    } 
+        }  
+    } if (searchResults.length == 0 && document.URL.split("=")[1] === "search-results?p"){
+        console.log("noResult");
+        var viewSongs = document.getElementById("viewSongs")
+        viewSongs.style.display = "none";
+    }
    
 }
         
