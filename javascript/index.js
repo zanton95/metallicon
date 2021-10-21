@@ -41,24 +41,56 @@
 
                 history.pushState({}, " ", "?view=songs"); 
                 pushCssIntoHtmlToViewPage ();
-                    return pushState.apply(history, arguments);
+                // testing ();
+                    // return pushState.apply(history, arguments);
                 
             });
-
-            songsList.addEventListener('click', function () {
+            // songsPageClicked.addEventListener('click', () => {
+            //     history.pushState({}, " ", "?view=songs"); 
+            //     pushCssIntoHtmlToViewPage ();
+            //   }, { once: true });
             
 
+            songsList.addEventListener('click', function () {
+                
                 history.pushState({}, " ", "?view=single-song?name"); 
-                pushCssIntoHtmlToViewPage ()
+                pushCssIntoHtmlToViewPage ();
                     return pushState.apply(history, arguments);
+               
+                
                 
             });
 
         };
-                    
-     function testing (){
+
         
-     };
+       
+        
+                    
+    //  function testing (){
+    //     if (document.URL.split("=")[1] === "songs"){
+
+    //         var viewSongs = document.getElementById("viewSongs")
+    //         viewSongs.style.display = "block";
+    //         var viewHome =  document.getElementById("viewHome")
+    //         viewHome.style.display = "none";
+    //         var singleSong = document.getElementById("viewSingleSong")
+    //         singleSong.style.display = "none";
+
+    //         var ul = document.getElementById("songs-list");
+    //         for(i = 0; i < songs.length; i++) {
+    //             var hr = document.createElement("hr");
+    //             var songListItem = document.createElement("li");
+    //             var songLink = document.createElement("a");
+    //             var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
+    //             songLink.appendChild(songLinkName); 
+    //             ul.appendChild(songListItem);
+    //             songListItem.appendChild(songLink);
+    //             // songLink.href = songs[i].Url;
+    //             songLink.classList.add("song-link");
+             
+    //         } }
+    //  };
         
            
 
@@ -84,9 +116,10 @@ var test = false;
             viewSongs.style.display = "block";
             var viewHome =  document.getElementById("viewHome")
             viewHome.style.display = "none";
+            var singleSong = document.getElementById("viewSingleSong")
+            singleSong.style.display = "none";
 
             var ul = document.getElementById("songs-list");
-            // viewSongs.classList.add("VisibleHtmlElement");
             for(i = 0; i < songs.length; i++) {
                 var hr = document.createElement("hr");
                 var songListItem = document.createElement("li");
@@ -95,7 +128,7 @@ var test = false;
                 songLink.appendChild(songLinkName); 
                 ul.appendChild(songListItem);
                 songListItem.appendChild(songLink);
-                songLink.href = songs[i].Url;
+                // songLink.href = songs[i].Url;
                 songLink.classList.add("song-link");
              
             } 
@@ -156,15 +189,15 @@ var test = false;
                 viewSongs.style.display = "block";
                 var viewHome =  document.getElementById("viewHome")
                 viewHome.style.display = "none";
-                // var singleSong = document.getElementById("viewSingleSong")
-                // singleSong.style.display = "none";
+                var singleSong = document.getElementById("viewSingleSong")
+                singleSong.style.display = "none";
                 var ul = document.getElementById("songs-list");
                 var viewSongs =  $("#viewSongs")[0];
                 var searchedSong = document.createElement("a");
                 var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
                 searchedSong.appendChild(songLinkName); 
                 ul.appendChild(searchedSong);
-                searchedSong.href = songs[i].Url;
+                // searchedSong.href = songs[i].Url;
                 searchedSong.classList.add("song-link");
                
             }  
