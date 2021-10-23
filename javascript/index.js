@@ -41,6 +41,7 @@
 
                 history.pushState({}, " ", "?view=songs"); 
                 pushCssIntoHtmlToViewPage ();
+                
                 // testing ();
                     // return pushState.apply(history, arguments);
                 
@@ -55,11 +56,13 @@
                 
                 history.pushState({}, " ", "?view=single-song?name"); 
                 pushCssIntoHtmlToViewPage ();
-                    return pushState.apply(history, arguments);
+                
+                    // return pushState.apply(history, arguments);
                
                 
                 
             });
+
 
         };
 
@@ -133,6 +136,13 @@ var test = false;
              
             } 
         } else if (document.URL.split("=")[1] === "single-song?name"){
+            for(var i = 0; i < songs.length; i++){
+                var nameOfSong = songs[i].title;
+                if (document.URL.split("=")[1] === "single-song?name"){
+                    alert("sadsd")
+                    history.pushState({}, " ", "?view=single-song?name=" + nameOfSong); 
+                }
+            }
             var singleSong = document.getElementById("viewSingleSong")
             singleSong.style.display = "block";
             var viewSongs = document.getElementById("viewSongs")
@@ -189,10 +199,10 @@ var test = false;
                 viewSongs.style.display = "block";
                 var viewHome =  document.getElementById("viewHome")
                 viewHome.style.display = "none";
-                var singleSong = document.getElementById("viewSingleSong")
-                singleSong.style.display = "none";
-                var ul = document.getElementById("songs-list");
+                // var singleSong = document.getElementById("viewSingleSong")
+                // singleSong.style.display = "none";
                 var viewSongs =  $("#viewSongs")[0];
+                var ul = document.getElementById("songs-list");
                 var searchedSong = document.createElement("a");
                 var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
                 searchedSong.appendChild(songLinkName); 
