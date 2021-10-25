@@ -25,7 +25,9 @@
     function navigateToPage() {
         var homePageClicked = document.getElementById("homePageLink");
         var songsPageClicked = document.getElementById("songsPageLink");
+        var songLinkId = document.getElementById("songLinkId");
         var songsList = document.getElementById("songs-list");
+
 
         var pushState = history.pushState;
         
@@ -42,8 +44,7 @@
                 history.pushState({}, " ", "?view=songs"); 
                 pushCssIntoHtmlToViewPage ();
                 
-                // testing ();
-                    // return pushState.apply(history, arguments);
+               
                 
             });
             // songsPageClicked.addEventListener('click', () => {
@@ -52,16 +53,6 @@
             //   }, { once: true });
             
 
-            songsList.addEventListener('click', function () {
-                
-                history.pushState({}, " ", "?view=single-song?name"); 
-                pushCssIntoHtmlToViewPage ();
-                
-                    // return pushState.apply(history, arguments);
-               
-                
-                
-            });
 
 
         };
@@ -71,28 +62,7 @@
         
                     
     //  function testing (){
-    //     if (document.URL.split("=")[1] === "songs"){
-
-    //         var viewSongs = document.getElementById("viewSongs")
-    //         viewSongs.style.display = "block";
-    //         var viewHome =  document.getElementById("viewHome")
-    //         viewHome.style.display = "none";
-    //         var singleSong = document.getElementById("viewSingleSong")
-    //         singleSong.style.display = "none";
-
-    //         var ul = document.getElementById("songs-list");
-    //         for(i = 0; i < songs.length; i++) {
-    //             var hr = document.createElement("hr");
-    //             var songListItem = document.createElement("li");
-    //             var songLink = document.createElement("a");
-    //             var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
-    //             songLink.appendChild(songLinkName); 
-    //             ul.appendChild(songListItem);
-    //             songListItem.appendChild(songLink);
-    //             // songLink.href = songs[i].Url;
-    //             songLink.classList.add("song-link");
-             
-    //         } }
+    //     
     //  };
         
            
@@ -128,21 +98,31 @@ var test = false;
                 var songListItem = document.createElement("li");
                 var songLink = document.createElement("a");
                 var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
+                var songNameInUrl = songs[i].title;
                 songLink.appendChild(songLinkName); 
                 ul.appendChild(songListItem);
                 songListItem.appendChild(songLink);
                 // songLink.href = songs[i].Url;
                 songLink.classList.add("song-link");
+                songLink.setAttribute('id','songLinkId');
+                var sdasd = songLink[i];
+                songLink.addEventListener('click', function () {
+                    
+                    songLink = songNameInUrl;
+                    history.pushState({}, " ", "?view=single-song?name=" + songNameInUrl); 
+                    
+                    pushCssIntoHtmlToViewPage ();
+                    
+                        // return pushState.apply(history, arguments);
+                   
+                    
+                    
+                });
+    
              
             } 
         } else if (document.URL.split("=")[1] === "single-song?name"){
-            for(var i = 0; i < songs.length; i++){
-                var nameOfSong = songs[i].title;
-                if (document.URL.split("=")[1] === "single-song?name"){
-                    alert("sadsd")
-                    history.pushState({}, " ", "?view=single-song?name=" + nameOfSong); 
-                }
-            }
+           
             var singleSong = document.getElementById("viewSingleSong")
             singleSong.style.display = "block";
             var viewSongs = document.getElementById("viewSongs")
@@ -209,7 +189,8 @@ var test = false;
                 ul.appendChild(searchedSong);
                 // searchedSong.href = songs[i].Url;
                 searchedSong.classList.add("song-link");
-               
+
+            
             }  
         } if (searchResults.length == 0 && document.URL.split("=")[1] === "search-results?p"){
             console.log("noResult");
