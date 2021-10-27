@@ -6,6 +6,7 @@
         
     });
     document.addEventListener('keypress', checkIfEnterKeyPressed );
+    
 
 
     function initialize() {
@@ -94,35 +95,30 @@ var test = false;
 
             var ul = document.getElementById("songs-list");
             for(i = 0; i < songs.length; i++) {
-                var hr = document.createElement("hr");
                 var songListItem = document.createElement("li");
                 var songLink = document.createElement("a");
                 var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
-                var songNameInUrl = songs[i].title;
+                let songNameInUrl = songs[i].title;
                 songLink.appendChild(songLinkName); 
                 ul.appendChild(songListItem);
                 songListItem.appendChild(songLink);
                 // songLink.href = songs[i].Url;
                 songLink.classList.add("song-link");
                 songLink.setAttribute('id','songLinkId');
-                var sdasd = songLink[i];
-                songLink.addEventListener('click', function () {
-                    
-                    songLink = songNameInUrl;
+                songLink.addEventListener('click', ChooseSongPage );
+            function ChooseSongPage () {
+                    // setTimeout(function() {
                     history.pushState({}, " ", "?view=single-song?name=" + songNameInUrl); 
-                    
                     pushCssIntoHtmlToViewPage ();
-                    
-                        // return pushState.apply(history, arguments);
-                   
-                    
-                    
-                });
-    
-             
+                // }, 1000);
+                };
             } 
+                
+            
+                
+            
+            
         } else if (document.URL.split("=")[1] === "single-song?name"){
-           
             var singleSong = document.getElementById("viewSingleSong")
             singleSong.style.display = "block";
             var viewSongs = document.getElementById("viewSongs")
@@ -222,4 +218,21 @@ var test = false;
              *    a parameter and than it will add the class.
              *  - Don't forget that we have examples on 'js-practice' branch
              */
+     
     
+    
+    
+    
+    
+    
+   
+
+
+    for(var i = 0;i < 10;i++){
+        (function(){
+            var ii = i;
+            setTimeout(function(){
+                console.log(ii);
+            },1000);
+        })();
+    }
