@@ -7,8 +7,6 @@
     });
     document.addEventListener('keypress', checkIfEnterKeyPressed );
     
-
-
     function initialize() {
         pushCssIntoHtmlToViewPage();
         linkDisplayedBySearching ();
@@ -21,58 +19,26 @@
         {title:"The Unforgiven II", lyrics:"Lay beside me and tell me what they've done <br> And speak the words I wanna hear to make my demons run <br> The door is locked now but it's open if you're true <br> If you can understand the me then I can understand the you <br> <br> Lay beside me, under wicked sky <br> Through black of day, dark of night, we share this, paralyzed <br> The door cracks open but there's no sun shining through <br> Black heart scarring darker still but there's no sun shining through <br> No there's no sun shining through, no there's no sun shining <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Come lay beside me, this won't hurt I swear <br> She loves me not, she loves me still but she'll never love again <br> She lay beside me but she'll be there when I'm gone <br> Black hearts scarring darker still, yes she'll be there when I'm gone <br> Yes she'll be there when I'm gone, dead sure she'll be there? <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Lay beside me, tell me what I've done <br> The door is closed so are your eyes <br> But now I see the sun, now I see the sun <br> <br> Yes now I see it <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you <br> <br> Yeah, what I've felt, what I've known <br> So sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits <br> The one who waits for you <br> <br> Oh, what I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? (so I dub thee unforgiven) <br> <br> Oh, what I've felt <br> Oh, what I've known <br> I'll take this key and I'll bury it in you <br> Because you're unforgiven too <br> <br> Never free, never me <br> 'Cause you're unforgiven too, oh oh", Url: "index.html?view=single-song?name=The Unforgiven II", StringInsideUrl: "The%20Unforgiven%20II"},
     ];
     
-    
-
+    // function below checks if links were clicked
     function navigateToPage() {
         var homePageClicked = document.getElementById("homePageLink");
         var songsPageClicked = document.getElementById("songsPageLink");
         var songLinkId = document.getElementById("songLinkId");
         var songsList = document.getElementById("songs-list");
-
-
         var pushState = history.pushState;
         
-            homePageClicked.addEventListener('click', function () {
-               
-                history.pushState({}, " ", "?view=home"); 
-                pushCssIntoHtmlToViewPage ();
-                return pushState.apply(history, arguments);
-              });
-            
-            songsPageClicked.addEventListener('click', function () {
-            
-
-                history.pushState({}, " ", "?view=songs"); 
-                pushCssIntoHtmlToViewPage ();
-                
-               
-                
-            });
-            // songsPageClicked.addEventListener('click', () => {
-            //     history.pushState({}, " ", "?view=songs"); 
-            //     pushCssIntoHtmlToViewPage ();
-            //   }, { once: true });
-            
-
-
-
-        };
-
-        
-       
-        
-                    
-    //  function testing (){
-    //     
-    //  };
-        
+        homePageClicked.addEventListener('click', function () {
+            history.pushState({}, " ", "?view=home"); 
+            pushCssIntoHtmlToViewPage ();
+            return pushState.apply(history, arguments);
+          });
            
-
+        songsPageClicked.addEventListener('click', function () {
+            history.pushState({}, " ", "?view=songs"); 
+            pushCssIntoHtmlToViewPage ();
+        });
+    };
             
-
-    
-    
-
 var test = false;
     // function below incerts css into a hidden html element via query strings and decides which page is visible   
     function pushCssIntoHtmlToViewPage () {
@@ -107,18 +73,11 @@ var test = false;
                 songLink.setAttribute('id','songLinkId');
                 songLink.addEventListener('click', ChooseSongPage );
             function ChooseSongPage () {
-                    // setTimeout(function() {
                     history.pushState({}, " ", "?view=single-song?name=" + songNameInUrl); 
                     pushCssIntoHtmlToViewPage ();
-                // }, 1000);
                 };
             } 
-                
-            
-                
-            
-            
-        } else if (document.URL.split("=")[1] === "single-song?name"){
+            } else if (document.URL.split("=")[1] === "single-song?name"){
             var singleSong = document.getElementById("viewSingleSong")
             singleSong.style.display = "block";
             var viewSongs = document.getElementById("viewSongs")
@@ -185,6 +144,12 @@ var test = false;
                 ul.appendChild(searchedSong);
                 // searchedSong.href = songs[i].Url;
                 searchedSong.classList.add("song-link");
+                let songNameInUrl = songs[i].title;
+                searchedSong.addEventListener('click', ChooseSongPage );
+                function ChooseSongPage () {
+                        history.pushState({}, " ", "?view=single-song?name=" + songNameInUrl); 
+                        pushCssIntoHtmlToViewPage ();
+                    };
 
             
             }  
@@ -217,22 +182,4 @@ var test = false;
              *  - Can we create a function that would do this? It can take the name of the elemnt to find as
              *    a parameter and than it will add the class.
              *  - Don't forget that we have examples on 'js-practice' branch
-             */
-     
-    
-    
-    
-    
-    
-    
-   
-
-
-    for(var i = 0;i < 10;i++){
-        (function(){
-            var ii = i;
-            setTimeout(function(){
-                console.log(ii);
-            },1000);
-        })();
-    }
+             */  
