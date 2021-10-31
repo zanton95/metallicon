@@ -1,4 +1,4 @@
-    "use strict"
+    // "use strict"
 
     document.addEventListener("DOMContentLoaded", () => {
         initialize();
@@ -29,30 +29,35 @@
             history.pushState({}, " ", "?view=home"); 
             pushCssIntoHtmlToViewPage ();
             // return pushState.apply(history, arguments);
+            songsPageClicked.addEventListener('click', showSongPage );
           });
            
       
         songsPageClicked.addEventListener('click', showSongPage );
+        
         function showSongPage () {
+            var viewSongs = document.getElementById("viewSongs")
             history.pushState({}, " ", "?view=songs"); 
+            viewSongs.style.display = "block";
             // pushCssIntoHtmlToViewPage ();
             songsPageListLoad ();
-            // test();
+            test();
         };
-        // function test(){
+       
+        function test(){
+            songsPageClicked.removeEventListener('click', showSongPage );
+            // test()
+        
+        }
 
-        //     if (document.URL.split("=")[1] === "home" || document.URL.split("=")[1] === "single-song?name" || document.URL.split("=")[1] === "search-results?p"){
-        //         alert("asds")
-        //         songsPageClicked.addEventListener('click', showSongPage );
-                
-        //         } else if (document.URL.split("=")[1] === "songs"){
-        //             songsPageClicked.removeEventListener('click', showSongPage );
-        //             test()
-        //         }
-        // }
         
         
     };
+        
+        
+        
+
+           
             
 
     
@@ -128,8 +133,8 @@
         var songsPageClicked = document.getElementById("songsPageLink");
         if (document.URL.split("=")[1] === "songs"){
 
-            var viewSongs = document.getElementById("viewSongs")
-            viewSongs.style.display = "block";
+            // var viewSongs = document.getElementById("viewSongs")
+            // viewSongs.style.display = "block";
             var viewHome =  document.getElementById("viewHome")
             viewHome.style.display = "none";
             var singleSong = document.getElementById("viewSingleSong")
