@@ -80,6 +80,10 @@
             var singleSong = document.getElementById("viewSingleSong")
             singleSong.style.display = "none";
 
+            /**
+             * Lev note #2:
+             * Notice that you've written this code twice.
+             */
             var ul = document.getElementById("songs-list");
             for(i = 0; i < songs.length; i++) {
                 var songListItem = document.createElement("li");
@@ -140,6 +144,12 @@
             var singleSong = document.getElementById("viewSingleSong")
             singleSong.style.display = "none";
 
+            /**
+             * Lev note #1:
+             * Try putting a breakpoint on the next line and see what's different on the first time you navifate to 'songs' page and on the second.
+             * Hint: Since you're not REALLY reloading, because you're building a single page app which is fucking awesome, the <li> items you added last time you were on this page
+             * will still be there when you're back. What if you could remove them first?
+             */
             var ul = document.getElementById("songs-list");
             for(var i = 0; i < songs.length; i++) {
                 var songListItem = document.createElement("li");
