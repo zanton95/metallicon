@@ -23,26 +23,42 @@
     function navigateToPage() {
         var homePageClicked = document.getElementById("homePageLink");
         var songsPageClicked = document.getElementById("songsPageLink");
-        var songLinkId = document.getElementById("songLinkId");
-        var songsList = document.getElementById("songs-list");
         var pushState = history.pushState;
         
         homePageClicked.addEventListener('click', function () {
             history.pushState({}, " ", "?view=home"); 
             pushCssIntoHtmlToViewPage ();
-            return pushState.apply(history, arguments);
+            // return pushState.apply(history, arguments);
           });
            
-        songsPageClicked.addEventListener('click', function () {
+      
+        songsPageClicked.addEventListener('click', showSongPage );
+        function showSongPage () {
             history.pushState({}, " ", "?view=songs"); 
-            pushCssIntoHtmlToViewPage ();
-        });
+            // pushCssIntoHtmlToViewPage ();
+            songsPageListLoad ();
+            // test();
+        };
+        // function test(){
+
+        //     if (document.URL.split("=")[1] === "home" || document.URL.split("=")[1] === "single-song?name" || document.URL.split("=")[1] === "search-results?p"){
+        //         alert("asds")
+        //         songsPageClicked.addEventListener('click', showSongPage );
+                
+        //         } else if (document.URL.split("=")[1] === "songs"){
+        //             songsPageClicked.removeEventListener('click', showSongPage );
+        //             test()
+        //         }
+        // }
+        
+        
     };
             
-var test = false;
+
+    
+
     // function below incerts css into a hidden html element via query strings and decides which page is visible   
     function pushCssIntoHtmlToViewPage () {
-        
         if (document.URL.split("=")[1] === "home") {
             var viewHome =  document.getElementById("viewHome")
             viewHome.style.display = "block";
@@ -103,7 +119,46 @@ var test = false;
             var viewHome =  $("#viewHome")[0];
             viewHome.classList.add("VisibleHtmlElement");
         }
+       
     }
+
+
+
+    function songsPageListLoad (){
+        var songsPageClicked = document.getElementById("songsPageLink");
+        if (document.URL.split("=")[1] === "songs"){
+
+            var viewSongs = document.getElementById("viewSongs")
+            viewSongs.style.display = "block";
+            var viewHome =  document.getElementById("viewHome")
+            viewHome.style.display = "none";
+            var singleSong = document.getElementById("viewSingleSong")
+            singleSong.style.display = "none";
+
+            var ul = document.getElementById("songs-list");
+            for(var i = 0; i < songs.length; i++) {
+                var songListItem = document.createElement("li");
+                var songLink = document.createElement("a");
+                var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
+                let songNameInUrl = songs[i].title;
+                songLink.appendChild(songLinkName); 
+                ul.appendChild(songListItem);
+                songListItem.appendChild(songLink);
+                // songLink.href = songs[i].Url;
+                songLink.classList.add("song-link");
+                songLink.setAttribute('id','songLinkId');
+                songLink.addEventListener('click', ChooseSongPage );
+            function ChooseSongPage () {
+                    history.pushState({}, " ", "?view=single-song?name=" + songNameInUrl); 
+                    pushCssIntoHtmlToViewPage ();
+                };
+            } 
+        }
+        
+     
+            
+    };
+
 
     // function below checks whether the enter key is being pressed 
 
