@@ -150,6 +150,7 @@
              * Hint: Since you're not REALLY reloading, because you're building a single page app which is fucking awesome, the <li> items you added last time you were on this page
              * will still be there when you're back. What if you could remove them first?
              */
+            
             var ul = document.getElementById("songs-list");
             for(var i = 0; i < songs.length; i++) {
                 var songListItem = document.createElement("li");
