@@ -43,23 +43,22 @@
             
         }
         
-        function showSongPage () {
-            var ulLength = $('#songs-list').length;
-            var viewSongs = document.getElementById("viewSongs");
-            history.pushState({}, " ", "?view=songs"); 
-            // songListItem.remove();
-            viewSongs.style.display = "block";
-            var ul = document.getElementById("songs-list");
-            for(i = 0; i < ul.children.length; i++) {
-                
-                $('ul').children().remove()
-            }
-            songsPageListLoad ();
-            // alert(ul.children.length)
-            test();
-        };
     };
     
+    function showSongPage () {
+        var viewSongs = document.getElementById("viewSongs");
+        history.pushState({}, " ", "?view=songs"); 
+        // songListItem.remove();
+        viewSongs.style.display = "block";
+        var ul = document.getElementById("songs-list");
+        for(i = 0; i < ul.children.length; i++) {
+            
+            $('ul').children().remove()
+        }
+        songsPageListLoad ();
+        // alert(ul.children.length)
+        test();
+    };
     
     
     // ul.removeChild(ul.children[1]);
@@ -102,7 +101,6 @@
                 songLink.appendChild(songLinkName); 
                 ul.appendChild(songListItem);
                 songListItem.appendChild(songLink);
-                // songLink.href = songs[i].Url;
                 songLink.classList.add("song-link");
                 songLink.setAttribute('id','songLinkId');
                 songLink.addEventListener('click', ChooseSongPage );
@@ -148,7 +146,7 @@
         var homePageClicked = document.getElementById("homePageLink");
         
         if (document.URL.split("=")[1] === "songs"){
-            var viewSongs = document.getElementById("viewSongs")
+            // var viewSongs = document.getElementById("viewSongs")
             // viewSongs.style.display = "block";
             var viewHome =  document.getElementById("viewHome");
             viewHome.style.display = "none";
@@ -171,9 +169,7 @@
                 songLink.appendChild(songLinkName); 
                 ul.appendChild(songListItem);
                 songListItem.appendChild(songLink);
-                // songLink.href = songs[i].Url;
                 songLink.classList.add("song-link");
-                // songLink.setAttribute('id','songLinkId');
                 songLink.addEventListener('click', ChooseSongPage );
                 function ChooseSongPage () {
                     history.pushState({}, " ", "?view=single-song?name=" + songNameInUrl); 
@@ -181,15 +177,10 @@
                     songsPageClicked.addEventListener('click', showSongPage );
                 };
             } 
-            // homePageClicked.addEventListener('click', removeListItems );
-            // function removeListItems(){
-            //     // alert("Asdsd")
-            //     ul.removeChild(songListItem);
-            // }
         }
+    };
         
             
-    };
 
 
     // function below checks whether the enter key is being pressed 
@@ -201,6 +192,11 @@
             
         if (keyCode === 13 && searchContent) {
             history.pushState({}, " ", "?view=search-results?p=" + searchContent);   
+            var ul = document.getElementById("songs-list");
+            for(i = 0; i < ul.children.length; i++) {
+                
+                $('ul').children().remove()
+            }
             linkDisplayedBySearching();
             return pushState.apply(history, arguments);
              
@@ -235,7 +231,7 @@
                 searchedSong.addEventListener('click', ChooseSongPage );
                 function ChooseSongPage () {
                         history.pushState({}, " ", "?view=single-song?name=" + songNameInUrl); 
-                        ul.removeChild(songListItem);
+                        // ul.removeChild(songListItem);
                         pushCssIntoHtmlToViewPage ();
                     };
 
@@ -271,3 +267,6 @@
              *    a parameter and than it will add the class.
              *  - Don't forget that we have examples on 'js-practice' branch
              */  
+
+
+    
