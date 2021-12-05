@@ -34,15 +34,6 @@
       
         songsPageClicked.addEventListener('click', showSongPage );
         
-        
-        
-        
-        function test(){
-            songsPageClicked.removeEventListener('click', showSongPage );
-            // test() 
-            
-        }
-        
     };
     
     function showSongPage () {
@@ -56,8 +47,6 @@
             $('ul').children().remove()
         }
         songsPageListLoad ();
-        // alert(ul.children.length)
-        test();
     };
     
     
@@ -198,7 +187,7 @@
                 $('ul').children().remove()
             }
             linkDisplayedBySearching();
-            return pushState.apply(history, arguments);
+            // return pushState.apply(history, arguments);
              
         } 
     };
