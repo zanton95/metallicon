@@ -18,7 +18,7 @@
         {title:"Enter Sandman", lyrics:"Say your prayers little one <br> Don't forget, my son <br> To include everyone <br> Tuck you in, warm within <br> Keep you free from sin <br> 'Till the sandman he comes <br> Sleep with one eye open <br> Gripping your pillow tight <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Somethings wrong, shut the light <br> Heavy thoughts tonight <br> And they aren't of Snow White <br> Dreams of war, dreams of liars <br> Dreams of dragon's fire <br> And of things that will bite <br> Sleep with one eye open <br> Gripping your pillow tight <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Now I lay me down to sleep <br> Now I lay me down to sleep <br> I pray the Lord my soul to keep <br> I pray the Lord my soul to keep <br> If I die before I wake <br> If I die before I wake <br> I pray the lord my soul to take <br> I pray the lord my soul to take <br> <br> Hush little baby, don't say a word <br> And never mind that noise you heard <br> It's just the beasts under your bed <br> In your closet, in your head <br> <br> Exit, light <br> Enter, night <br> Grain of sand <br> <br> Exit, light <br> Enter, night <br> Take my hand <br> We're off to never-never land <br> <br> Yeah! <br> <br> We're off to never-never land <br> Take my hand <br> We're off to never-never land <br> Take my hand", Url: "index.html?view=single-song?name=Enter Sandman", StringInsideUrl: "Enter%20Sandman"}, 
         {title:"The Unforgiven II", lyrics:"Lay beside me and tell me what they've done <br> And speak the words I wanna hear to make my demons run <br> The door is locked now but it's open if you're true <br> If you can understand the me then I can understand the you <br> <br> Lay beside me, under wicked sky <br> Through black of day, dark of night, we share this, paralyzed <br> The door cracks open but there's no sun shining through <br> Black heart scarring darker still but there's no sun shining through <br> No there's no sun shining through, no there's no sun shining <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Come lay beside me, this won't hurt I swear <br> She loves me not, she loves me still but she'll never love again <br> She lay beside me but she'll be there when I'm gone <br> Black hearts scarring darker still, yes she'll be there when I'm gone <br> Yes she'll be there when I'm gone, dead sure she'll be there? <br> <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? <br> <br> Yeah, what I've felt, what I've known <br> Sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits for you <br> Or are you unforgiven too? <br> <br> Lay beside me, tell me what I've done <br> The door is closed so are your eyes <br> But now I see the sun, now I see the sun <br> <br> Yes now I see it <br> What I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you <br> <br> Yeah, what I've felt, what I've known <br> So sick and tired, I stand alone <br> Could you be there <br> 'Cause I'm the one who waits <br> The one who waits for you <br> <br> Oh, what I've felt, what I've known <br> Turn the pages, turn the stone <br> Behind the door, should I open it for you? (so I dub thee unforgiven) <br> <br> Oh, what I've felt <br> Oh, what I've known <br> I'll take this key and I'll bury it in you <br> Because you're unforgiven too <br> <br> Never free, never me <br> 'Cause you're unforgiven too, oh oh", Url: "index.html?view=single-song?name=The Unforgiven II", StringInsideUrl: "The%20Unforgiven%20II"},
     ];
-    
+   
     // function below checks if links were clicked
     function navigateToPage() {
         var homePageClicked = document.getElementById("homePageLink");
@@ -28,36 +28,45 @@
         homePageClicked.addEventListener('click', function () {
             history.pushState({}, " ", "?view=home"); 
             pushCssIntoHtmlToViewPage ();
-            // return pushState.apply(history, arguments);
             songsPageClicked.addEventListener('click', showSongPage );
           });
            
       
         songsPageClicked.addEventListener('click', showSongPage );
         
-        function showSongPage () {
-            var viewSongs = document.getElementById("viewSongs")
-            history.pushState({}, " ", "?view=songs"); 
-            viewSongs.style.display = "block";
-            // pushCssIntoHtmlToViewPage ();
-            songsPageListLoad ();
-            test();
-        };
-       
+        
+        
+        
         function test(){
             songsPageClicked.removeEventListener('click', showSongPage );
-            // test()
-        
+            // test() 
+            
         }
-
         
-        
+        function showSongPage () {
+            var ulLength = $('#songs-list').length;
+            var viewSongs = document.getElementById("viewSongs");
+            history.pushState({}, " ", "?view=songs"); 
+            // songListItem.remove();
+            viewSongs.style.display = "block";
+            var ul = document.getElementById("songs-list");
+            for(i = 0; i < ul.children.length; i++) {
+                
+                $('ul').children().remove()
+            }
+            songsPageListLoad ();
+            // alert(ul.children.length)
+            test();
+        };
     };
-        
-        
-        
-
-           
+    
+    
+    
+    // ul.removeChild(ul.children[1]);
+    // ul.innerHTML = "";
+    // $('ul') .children().remove();
+    // $('ul').empty()
+   
             
 
     
@@ -65,19 +74,19 @@
     // function below incerts css into a hidden html element via query strings and decides which page is visible   
     function pushCssIntoHtmlToViewPage () {
         if (document.URL.split("=")[1] === "home") {
-            var viewHome =  document.getElementById("viewHome")
+            var viewHome =  document.getElementById("viewHome");
             viewHome.style.display = "block";
-            var viewSongs = document.getElementById("viewSongs")
+            var viewSongs = document.getElementById("viewSongs");
             viewSongs.style.display = "none";
-            var singleSong = document.getElementById("viewSingleSong")
+            var singleSong = document.getElementById("viewSingleSong");
             singleSong.style.display = "none";
         } else  if (document.URL.split("=")[1] === "songs"){
 
-            var viewSongs = document.getElementById("viewSongs")
+            var viewSongs = document.getElementById("viewSongs");
             viewSongs.style.display = "block";
-            var viewHome =  document.getElementById("viewHome")
+            var viewHome =  document.getElementById("viewHome");
             viewHome.style.display = "none";
-            var singleSong = document.getElementById("viewSingleSong")
+            var singleSong = document.getElementById("viewSingleSong");
             singleSong.style.display = "none";
 
             /**
@@ -103,9 +112,9 @@
                 };
             } 
             } else if (document.URL.split("=")[1] === "single-song?name"){
-            var singleSong = document.getElementById("viewSingleSong")
+            var singleSong = document.getElementById("viewSingleSong");
             singleSong.style.display = "block";
-            var viewSongs = document.getElementById("viewSongs")
+            var viewSongs = document.getElementById("viewSongs");
             viewSongs.style.display = "none";
             var url = document.URL;
             var arrayLength = songs.length;
@@ -122,7 +131,7 @@
         document.getElementById("lyrics").innerHTML = lyricsFromArray;
         }
         else if (document.URL.split("=")[1] === "search-results?p") {
-            var viewSongs = document.getElementById("viewSongs")
+            var viewSongs = document.getElementById("viewSongs");
             viewSongs.style.display = "block";
         }else {
             var viewHome =  $("#viewHome")[0];
@@ -132,16 +141,18 @@
     }
 
 
-
+    
     function songsPageListLoad (){
+        sadasdsad = false;
         var songsPageClicked = document.getElementById("songsPageLink");
+        var homePageClicked = document.getElementById("homePageLink");
+        
         if (document.URL.split("=")[1] === "songs"){
-
-            // var viewSongs = document.getElementById("viewSongs")
+            var viewSongs = document.getElementById("viewSongs")
             // viewSongs.style.display = "block";
-            var viewHome =  document.getElementById("viewHome")
+            var viewHome =  document.getElementById("viewHome");
             viewHome.style.display = "none";
-            var singleSong = document.getElementById("viewSingleSong")
+            var singleSong = document.getElementById("viewSingleSong");
             singleSong.style.display = "none";
 
             /**
@@ -150,10 +161,10 @@
              * Hint: Since you're not REALLY reloading, because you're building a single page app which is fucking awesome, the <li> items you added last time you were on this page
              * will still be there when you're back. What if you could remove them first?
              */
-            
+             
             var ul = document.getElementById("songs-list");
             for(var i = 0; i < songs.length; i++) {
-                var songListItem = document.createElement("li");
+                var songListItem = document.createElement("li", { is : 'songLinkId' });
                 var songLink = document.createElement("a");
                 var songLinkName = document.createTextNode(' \u00A0' + songs[i].title);
                 let songNameInUrl = songs[i].title;
@@ -162,16 +173,21 @@
                 songListItem.appendChild(songLink);
                 // songLink.href = songs[i].Url;
                 songLink.classList.add("song-link");
-                songLink.setAttribute('id','songLinkId');
+                // songLink.setAttribute('id','songLinkId');
                 songLink.addEventListener('click', ChooseSongPage );
-            function ChooseSongPage () {
+                function ChooseSongPage () {
                     history.pushState({}, " ", "?view=single-song?name=" + songNameInUrl); 
                     pushCssIntoHtmlToViewPage ();
+                    songsPageClicked.addEventListener('click', showSongPage );
                 };
             } 
+            // homePageClicked.addEventListener('click', removeListItems );
+            // function removeListItems(){
+            //     // alert("Asdsd")
+            //     ul.removeChild(songListItem);
+            // }
         }
         
-     
             
     };
 
@@ -185,11 +201,11 @@
             
         if (keyCode === 13 && searchContent) {
             history.pushState({}, " ", "?view=search-results?p=" + searchContent);   
-            linkDisplayedBySearching()  
+            linkDisplayedBySearching();
             return pushState.apply(history, arguments);
              
         } 
-    }
+    };
 
     // function below decides which song link is displayed when a song name is written in the search-bar
     var searchResults = [];
@@ -201,9 +217,9 @@
             var titleToLowerCase = songs[i].title.toLowerCase();
             if (makeLowerCase === songs[i].title.toLowerCase() || titleToLowerCase.includes(makeLowerCase)) {
                 searchResults.push(songs[i]);
-                var viewSongs = document.getElementById("viewSongs")
+                var viewSongs = document.getElementById("viewSongs");
                 viewSongs.style.display = "block";
-                var viewHome =  document.getElementById("viewHome")
+                var viewHome =  document.getElementById("viewHome");
                 viewHome.style.display = "none";
                 // var singleSong = document.getElementById("viewSingleSong")
                 // singleSong.style.display = "none";
@@ -219,6 +235,7 @@
                 searchedSong.addEventListener('click', ChooseSongPage );
                 function ChooseSongPage () {
                         history.pushState({}, " ", "?view=single-song?name=" + songNameInUrl); 
+                        ul.removeChild(songListItem);
                         pushCssIntoHtmlToViewPage ();
                     };
 
@@ -228,13 +245,13 @@
             console.log("noResult");
             var viewSongs = document.getElementById("viewSongs");
             viewSongs.style.display = "none";
-            var singleSong = document.getElementById("viewSingleSong")
+            var singleSong = document.getElementById("viewSingleSong");
             singleSong.style.display = "none";
             var viewHome =  document.getElementById("viewHome")
             viewHome.style.display = "none";
         }
     
-    }
+    };
             
 
     /* 
