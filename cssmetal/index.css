@@ -1,41 +1,227 @@
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
+
+body {
+  margin: 0;
+  padding: 0;
   
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .lyrics, .main-title {
-      font-style: oblique;
-  }
-  .dropdown-content a:hover {background-color: #ddd}
-  .show {display:block;}
+}
+
+@font-face {
+  font-family: 'Metallica'; src: url('../fonts/PASTOROF.TTF') ;
+}
+
+/* Index page */
+
+.topnav {
+  background-color: #333;
+  position: relative;
+  padding-top: 33px;
+ }
 
 
-  /* .dropdown-content a:hover {background-color: #ddd;}
+  .topnav a {
+  position: relative;
+  color: aliceblue;
+  font-size: 35px;
+  font-family: 'Metallica';
+  text-decoration: none;
+  padding: 20px;
+  }
+ 
+  .topnav a:hover {
+    color: rgba(255, 166, 0, 0.89);
+    background-color: rgb(80, 77, 77);
+    
+  }
+ 
+.home {
+  margin-left: 64px;
+  bottom: 17px;
+  
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.songs {
+  
+  bottom: 17px;
+}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;} */
+.search-bar {
+  position: relative;
+  padding: 5px 5px;
+  font-size: 17px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  float: right;
+  width: 195px;
+  bottom: 11px;
+  right: 65px;
+}
+
+.topnav i {
+  position: relative;
+    float: right;
+    bottom: 5px;
+    color: #9e9c9c;
+    font-size: 17px;
+    left: 130px;
+}
+.img-container {
+  overflow-x: hidden;
+}
+
+.main-img {
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+} 
+  
+
+.top-left {
+  position: relative;
+  font-size: 75px;
+  font-family: 'Metallica';
+  color: #1d1d1d;
+  bottom: 630.5px;
+  left: 85px;
+  width: 450px;  
+}
+
+.middle-head {
+  position: relative ;
+  bottom: 149px;
+  /* left: ; */
+  text-align: center;
+  font-size: 64px;
+  font-family: 'Metallica';
+  color: #333333;
+}
+
+.video-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  bottom: 280px;
+  height: 277px;
+}
+
+.middle-paragraph {
+  position: relative;
+  color: #333333;
+  font-size: 18px;
+  font-style: italic;
+  bottom: 188px;
+  text-align: center;
+}
+
+.bottom-paragraph {
+  position: relative;
+  top: 245px;
+  font-family: 'Metallica';
+  color: #333333;
+  font-size: 42px;
+  text-align: center;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Songs page !!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.songs-list {
+  border-style: solid;
+  border-top: none;
+  width: 890px;
+  list-style-type: none;
+  border-width: 0.2px;
+  padding-left: 0;
+  margin-left: 26.5%;
+  border-radius: 5px;
+  display: block;
+  margin-top: 30px; 
+}
+
+hr {
+  border-color:#333333;
+  border-top: 0px solid #333333;
+  margin: 0px;
+  
+}
+
+ul li:hover {
+background: #f1eeeec9;
+color: white;
+}
+
+.songs-title-container {
+  margin-top: 45px;
+}
+
+.songs-title {
+  color: #333333;
+  margin-left: 26.5%;
+}
+
+.song-link {
+  color: #333333;
+  text-decoration: none;
+  display: block;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-top: 1px solid black;
+  border-radius: 2.5px;
+  border-width: 0.2px;
+}
+
+
+
+/* bottom bar  */
+.icon-bar {
+  position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 56px;
+    font-size: 19px;
+}
+
+.facebook, .twitter, .instagram{
+  color: white;
+}
+
+/* The Songs  */
+
+#songs-titles {
+  text-align: center;
+  margin-top: 41px;
+  color: #333;
+ }
+
+ #lyrics {
+  margin-bottom: 100px;
+  margin-top: 22px;
+  text-align: center;
+  font-size: 21px;
+  color: #333;
+ 
+}
+
+
+/* url view test ... */
+
+
+.hideHtmlElement {
+  display: none;
+}
+
+.VisibleHtmlElement {
+  display: block;
+}
+
+
+/* #viewSingleSong {
+  display: block;
+} */
+
+
+

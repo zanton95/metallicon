@@ -5,68 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metalicon</title>
     <link rel="stylesheet" href="cssmetal/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="javascript/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="index.html">NothingElseMatters</a>
-      <a href="entersandman.html">EnterSandman</a>
-      <a href="unforgiven.html">Unforgiven</a>
+<body id="index-page">
+  <div class="web-container">
+    
+    <div class="topnav" id="topNav">
+      <a class="home" id="homePageLink">Home</a>
+      <a class="songs" id="songsPageLink" >Songs</a>
+      <input id="search-bar-press" class="search-bar" type="text" placeholder="">
+      <i class="fa fa-search" aria-hidden="true"></i>
     </div>
-  </div>
-    <h1 class="main-title">Nothing Else Matters</h1>
-    <p class="lyrics">So close no matter how far
-        Couldn't be much more from the heart
-        Forever trusting who we are
-        And nothing else matters
-        
-        Never opened myself this way
-        Life is ours, we live it our way
-        All these words I don't just say
-        And nothing else matters
-        
-        Trust I seek and I find in you
-        Every day for us something new
-        Open mind for a different view
-        And nothing else matters
-        
-        Never cared for what they do
-        Never cared for what they know
-        But I know
-        
-        So close no matter how far
-        Couldn't be much more from the heart
-        Forever trusting who we are
-        And nothing else matters
-        
-        Never cared for what they do
-        Never cared for what they know
-        But I know
-        
-        I never opened myself this way
-        Life is ours, we live it our way
-        All these words I don't just say
-        And nothing else matters
-        
-        Trust I seek and I find in you
-        Every day for us something new
-        Open mind for a different view
-        And nothing else matters
-        
-        Never cared for what they say
-        Never cared for games they play
-        Never cared for what they do
-        Never cared for what they know
-        And I know
-        
-        So close no matter how far
-        Couldn't be much more from the heart
-        Forever trusting who we are
-        No nothing else matters
-        </p>
+    
 
+  </div>
+ 
+   <!-- Home page -->
+
+   
+
+<div id="viewHome" class="hideHtmlElement ">
+  <div  class="img-container" >
+    <img src="img/landing.jfiff.jfif" alt="Cheering fans" class="main-img">
+  </div>
+  <div>
+    <h1 class="top-left">Enter Sandman..</h1>
+  </div> 
+  <div><h1 class="middle-head">Welcome to Metallicon</h1></div>
+  <div><p class="middle-paragraph">Home to the fans of the legendary band - Metallica.</p></div>
+  <div> <p class="bottom-paragraph">Enter Sandman..</p> </div>
+  <div class="video-container">
+      <div>
+        <iframe width="700" height="394" src="https://www.youtube.com/embed/87by1DjfxLw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
+      </div>
+    </div>
+</div>
       
+
+
+
+
+<!-- Songs page -->
+
+<div  id="viewSongs" class="hideHtmlElement"> 
+  <div class="songs-title-container" >
+    <h1 class="songs-title">Metallicon Songs</h1>
+  </div>
+  <div class="songs-list-container">
+    <ul class="songs-list" id="songs-list">
+        <!-- <li><a class="song-link" href="index.html?view=single-song?name=Nothing Else Matters">&emsp; Nothing Else Matters</a> </li>
+        <hr>
+        <li><a class="song-link" href="index.html?view=single-song?name=Enter Sandman">&emsp; Enter Sandman</a> </li>
+        <hr>
+        <li><a class="song-link" href="index.html?view=single-song?name=The Unforgiven II">&emsp; The Unforgiven II</a> </li> -->
+      </ul>
+    </div>
+</div>
+  
+    
+
+
+<!-- Single Song Page -->
+
+
+<div  id="viewSingleSong"  class="hideHtmlElement">
+  <div><h1 id="songs-titles">Title</h1></div>
+  <div>
+    <p id="lyrics">Lyrics</p>
+  </div>
+</div>
+</div>
+ 
+
+  <!-- <div id="searchResultsPage" class="hideHtmlElement"> 
+    <div class="songs-title-container" >
+      <h1 class="songs-title">Metallicon Songs</h1>
+    </div>
+    <div class="songs-list-container">
+      <ul class="songs-list">
+          <li><a class="song-link" href="index.html?view=single-song?name=Nothing Else Matters">&emsp; Nothing Else Matters</a> </li>
+          <hr>
+          <li><a class="song-link" href="index.html?view=single-song?name=Enter Sandman">&emsp; Enter Sandman</a> </li>
+          <hr>
+          <li><a class="song-link" href="index.html?view=single-song?name=The Unforgiven II">&emsp; The Unforgiven II</a> </li>
+        </ul>
+      </div>
+  </div> -->
+
+  
+
+
+<div class="icon-bar">
+  Metallica @
+  <a href="https://www.facebook.com/Metallica/" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+  <a href="https://twitter.com/Metallica" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+  <a href="https://www.instagram.com/metallica/" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+  </div>
+  
 </body>
 </html>
